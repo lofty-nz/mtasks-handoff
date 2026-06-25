@@ -1,5 +1,5 @@
 # Mtasks — AI handoff report
-1.2 · build 137 · generated 2026-06-26 · from mobile · since build 137 committed
+1.2 · build 137 · generated 2026-06-26 · from web · since build 137 committed
 
 ## 🤖 NEXT TO FIX — Andrew flagged these for you (0)
 These are the tasks to work on this round, highest priority first. Treat everything below as reference only — don’t pick up unflagged items unless they inform these.
@@ -15,6 +15,8 @@ _none_
 _none_
 
 ## Open backlog — not yet flagged (40)
+- #1177 b137 add a button, copy AI Brief, it will copy any bugs or ideas that have been submitted since the last build into clipboard, or items highlighted for ai (Dev)
+- #1176 b137 Add option to download current build number to denotes deploy section (Medical)
 - #1175 b131 AI handoff: added an “Open Claude ↗” button next to copy (#1171). One tap copies the tokenized URL AND opens your Claude chat list (claude.ai/chats, newest first) so you can paste it straight into the latest chat. (#1172: there’s no public link that opens a specific most-recent chat — the chat list is the closest reliable target, so that’s what it opens.)
 - #1172 b129 Layout of devtools is terrible for mobile, the buttons at top aren't all fitting on the screen (Dev)
 - #1171 b129 Enter now commits in every single-line text field across the app (the rest of #1133). Typing in a field and pressing Enter saves it (the field blurs, firing its save); inside a dialog Enter also clicks Save to confirm it; comment/reply prompts commit on Enter too. Multi-line textareas are left alone so you can still add line breaks. The capture bar keeps its own Enter-to-log behaviour.
@@ -54,8 +56,6 @@ _none_
 - #1099 b69 make Sidebar icons bigger so there’s less empty space in each tile.
 - #1092 b65 Verified: clicking Add job lands you on the Jobs list with the new job at the top (build 61), and the New job form is grouped Customer/Appliance/Appointment with roomier boxes (build 60). Tick the two add-job items to clear them.
 - #1083 b63 Parts sync clarity: buttons now read ⬆ Push to sheet (app→tab) and ⬇ Pull from sheet (tab→app). A new Library part is your catalogue — it appears on the Parts Orders tab once you place an order (+ order) or it has stock, not on creation.
-- #1081 b62 Phase 2 Parts Orders sync: TTR ⚙ → paste the Parts Orders tab link → Sync parts (pull, matching by App ID) and Push all ↑ (write every order up). The tab is the source of truth; all part-order fields map both ways.
-- #1080 b61 Typing in the New job form no longer disappears: the job-tracker auto-sync won’t re-render the page while you’re on that form.
 
 ## Recent build notes
 - b137 — Fix: duplicate dev-note IDs broke the check button (#1179). Clicking ✓ on note #1171 didn’t advance it to Verified because two entries shared that id (from an earlier sync/collision) — verify/ship/flag all find a note by id, so the click was toggling the hidden twin while the one you tapped sat unchanged. On load, every duplicate id is now reassigned a fresh unique one, so each click acts on exactly the note you tapped. The verify confirmation now also names the id (“✓ #1171 advanced to Verified”). This was the real cause behind #1178 too — checking the box does move items to Verified; the wrong-record bug just made it look like it didn’t.

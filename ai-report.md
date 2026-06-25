@@ -66,6 +66,7 @@
 - #1030 b36 TTR job notes are two-way with the sheet’s Notes column — sheet notes populate the card, and adding a note appends it (dated) instead of overwriting. A notes icon on each job opens existing notes to read/add, or starts the first one.
 
 ## Open — to pick up next (🤖 flagged first) (40)
+- 🤖 #1175 b130 make the nuke button searchfor the highest version file in the mcam folder change its name to mtasks.html  and replace it original mtasks.html and relaunch (Calendar)
 - 🤖 #1172 b129 is there a way for the claude button to direct it to the most recent chat? (Dev)
 - 🤖 #1171 b129 add a link to claude ai next to the copy button for the ai handoff. (Dev)
 - 🤖 #1170 b129 add a programming rules button here as well so we can note coding tips and ways we like to work together. in fact just have one notes button, when pushed changes to 4 radio buttons, a general note that will be ldisplayed on the home screen, a bug, a idea, a coding tip (Calendar)
@@ -106,7 +107,6 @@
 - #1106 b74 Invoice redesigned to match your real template: logo, right-aligned business block, Bill To, green-header Items table with Technician Services / Fault / Work carried out lines, Subtotal/Total, footer. Defaults pre-filled with your business details (no GST, INV-00041 numbering). Print/PDF matches. Tagline, zero-pad digits and show-logo toggle added to Invoice setup.
 - #1104 b73 Invoicing tab in TTR: 🧾 button beside each job (or + New invoice → pick a job) creates an invoice that pulls in the job details, logged time (as labour) and parts used. Editable line items, GST, footer notes, live totals, Print/PDF, and Draft/Sent/Due/Paid/Cancelled tracking with filters.
 - #1105 b73 Invoice setup page: TTR → Jobs → ⚙ → Invoice setup — business name, GST number/rate, hourly rate, prefix, next number, payment terms, bank details and default footer.
-- #1103 b72 Business expenses are clickable to edit: tap an expense on TTR → Expenses to change its name, amount, period, % business and notes (or delete it).
 
 ## Recent build notes
 - b130 — One notes button, four kinds. The capture bar is now a single 📝 button — tap it and the field opens with four radio chips: 📝 Note, 🐞 Bug, 💡 Idea, 🧠 Coding tip (Note selected by default). Pick one, type, Enter to log with the read-back confirmation. General notes appear in a Notes card on Home; coding tips (and notes) also land in a new “Notes & coding tips” panel on the Dev page, tagged and kept out of the build pipeline so they don’t clutter the verify flow. Coding tips are for capturing how we like to work together. Implements #1170.

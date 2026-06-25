@@ -1,85 +1,26 @@
 # Mtasks — AI handoff report
-1.2 · build 132 · generated 2026-06-26 · from web
+1.2 · build 133 · generated 2026-06-26 · from web · since build 129 committed
 
-## 🤖 NEXT TO FIX — Andrew flagged these for you (5)
-These are the tasks to work on this round, highest priority first.
+## 🤖 NEXT TO FIX — Andrew flagged these for you (6)
+These are the tasks to work on this round, highest priority first. Treat everything below as reference only — don’t pick up unflagged items unless they inform these.
+- 🤖 #1177 b132 new devnotes will automatically be marked for ai (Dev)
 - 🤖 #1176 b132 needs to be the time to let tess as the most important thing on the home screen, not visible when its inactive, and have a took her button it to dismiss, add stuff so that when an alarm is missed it migt be linked to a recent "accident" on the carpet (Personal)
 - 🤖 #1172 b129 is there a way for the claude button to direct it to the most recent chat? (Dev)
-- 🤖 #106 the arrows in the invoice wil increment the cost $1 at a time, the box will be wider so 10000.00 is readable (TTR · )
 - 🤖 #1099 b69 make Sidebar icons bigger so there’s less empty space in each tile.
+- 🤖 #106 the arrows in the invoice wil increment the cost $1 at a time, the box will be wider so 10000.00 is readable (TTR · )
 - 🤖 #93 when click add job button in add job form the form doesnt take you back to the jobs tab (TTR · )
 
-## 🧠 Coding tips — how Andrew likes to work (1)
-- #1174 b130 when sending the mtasks download, put it in a mtasks folder, or do you have to zip it to do that? (Dev)
-
-## Bugs fixed (30)
-- 🤖 #1175 b130 make the nuke button searchfor the highest version file in the mcam folder change its name to mtasks.html  and replace it original mtasks.html and relaunch (Calendar)
-- 🤖 #1163 b120 lets put deploy and git hub side by side 50/50 each, theres a lot of wasted space (Dev)
-- #1161 b119 Removed the redundant footer “🛠 Log a fix / idea” box that was tacked onto the bottom of every non-Dev page. The pinned capture bar at the top (🐞/💡 picker, text field, Send, 🎙 voice) is already global and tags every note with the page you logged it from — so the footer box was a stripped-down duplicate (no picker, no voice). One toolbar everywhere now. Resolves #1156.
-- 🤖 #1157 b117 verify git hub works (Dev)
-- 🤖 #1156 b117 remove the footer devnotes entry section from every page, and check that they have the latest version of the note entry toolbar from the devnotes page (Diet)
-- #1155 b117 tag desktop (Dev)
-- #1150 b114 bug (Dev)
-- #1146 b114 Re-deploy the NEW Code.gs (it adds devReset/devAppend/devGet). Deploy → Manage deployments → Edit → New version → Deploy. Then on the Dev page open “Dev notes sync” and hit 🔌 Test connection — the log will say plainly whether the new code is live.
-- #1144 b114 Re-deploy the NEW Code.gs for the Dev Notes fix (paste over old → Deploy → Manage deployments → Edit → New version → Deploy). It now finds your existing devnotes tab by name, reads a JSON body, and supports Pull.
-- #1143 b108 rduce the vertical height of the train tracks so they only take up 2 inches of space, theres a lot of wasted space in this page (Dev)
-- 🤖 #1131 b98 build # dropdown menu will be a radio button instead, 2 options a picture of a ladybird or a picture of a lighbulb(new feature)
-- 🤖 #1130 b97 if i restore a dismissed item its bumped to the top of the list. if i add a new suggestion its bumped to the top, if i respond to something its bumped to the top, once something is verified it disappears and goes in the changelog. workflow is moved to the bottom of the page.the pipeline is squished to take up 1/2 the vertical space — notes: the pipeline is still taking up too much room, reduce it to half its vertical size
-- #1126 b92 put workflow and below tasks,pipe line at the top
-- #1124 b92 Widened the main content area to use the full screen width on desktop — it was capped at 1080px and centred, leaving big empty margins down both sides. Content now fills the window (still caps at 1600px on very large monitors so text lines don’t stretch too far). Affects every page.
-- #1123 b89 pin the buttons on the top right so they are static and always visable when scrolling
-- 🤖 #1122 b101 WHEN a new bug or feature is suggested it'll be tagged with the current build number and show up in the items in the dev list
-- 🤖 #1121 b101 the dev tools pipeline will default to the laTEST BUILD NOT ALL BUILDS
-- #1117 b89 Made the Dev-page Workflow explanation collapsible (collapsed by default, tap the heading to open) so the pipeline and log aren’t pushed down the screen.
-- #1094 b68 Home button moved to the top of the left sidebar; removed the round home/profile button from the top-right.
-- #1096 b68 Top-right Refresh is now a proper refresh icon (no emoji); Restart server is the radioactive ☢ symbol.
-- #1093 b114 Sync is working — rows now reach the Parts Orders + Inventory tabs and columns auto-create. Updated Code.gs fixes duplicates (matches a no-App-ID row by signature instead of appending) and gaps (fills the first empty row). Re-deploy Code.gs as a NEW version. Clear the one existing duplicate: delete the lower Kenwood row, then Push again. — notes: move axction items to the top of the related page instead
-- #1088 b65 Parts/inventory sync fixed: it no longer needs a separate sheet link — it auto-uses your Job Tracker spreadsheet, Parts Orders tab (gid 235265508) and Inventory tab (gid 543696022). Now: TTR → Inventory → 🔍 Sync & debug → 🧪 Test 1 push → 📋 Copy for AI. The reply tells us if Code.gs is deployed.
-- #1089 b65 🔍 debug panel shows the resolved spreadsheet + tab for both Parts Orders and Inventory, so you can see exactly where pushes are going.
-- #1087 b65 If parts still don’t sync: open TTR → Inventory → 🔍 Sync & debug, press ⬆ Push orders, then 📋 Copy for AI and paste it back to me. The log will show exactly where it stops (write-back URL missing, script not re-deployed, tab not shared, etc.).
-- #1084 b65 Parts sync now self-provisions: deploy the updated Code.gs as a NEW version, paste the Parts Orders tab link in TTR ⚙, then press ⬆ Push to sheet — it auto-creates the App ID + Qty/cost/sell/dates/etc. columns and fills your orders + stock. Then ⬇ Pull from sheet to confirm.
-- #1082 b65 Parts sync setup: (1) add the columns to your Parts Orders tab — Qty, Qty received, Unit cost, Unit sell, Shipping, Date received, Date checked, Date used, Notes, Updates, Location, App ID. (2) Deploy the updated Code.gs as a NEW version (adds upsertPartOrder). (3) Paste the Parts Orders tab link in TTR ⚙ and press Push all ↑, then Sync parts. — notes: the new part didnt add to the spreadsheet, i when i clicked sync the inventory didnt sync across to job tracker
-- #1073 b58 Advance-status → arrow added beside the status on every Inventory-tab item (and it’s consistent with the order dialog and job part rows). One global part-status lifecycle throughout.
-- #1070 b58 All job-status dropdowns (New job, in-app editor, and clicking into a synced job) now pull from the sheet’s own status list, plus the extras. Fixes the new statuses not being selectable on synced jobs.
-- #1071 b58 Part order dialog: a → next button advances the part one step through its lifecycle (to order → ordered → shipping → received → checked → in stock → used → disposed), timestamped.
-- #1072 b58 Load safety: a render error now shows on screen with the message instead of blanking, and never overwrites your saved data with the demo seed.
-
-## Ideas realised (30)
-- 🤖 #1171 b129 add a link to claude ai next to the copy button for the ai handoff. (Dev)
-- 🤖 #1170 b129 add a programming rules button here as well so we can note coding tips and ways we like to work together. in fact just have one notes button, when pushed changes to 4 radio buttons, a general note that will be ldisplayed on the home screen, a bug, a idea, a coding tip (Calendar)
-- #1162 b120 how do we automate sending you the bugreport from the devtools script so you can begin work on the next version? (Dev)
-- #1158 b117 add a collapsabile github control panel with all the useful features and links (Dev)
-- #1152 b114 add id# to the dev notes list so it say (idea tag, idea description, id#) (Dev)
-- #1151 b114 idea (Dev)
-- 🤖 #1148 b112 1/2 the size of the train tracks it takes up to much space, in desktop view only (Dev) — notes: remove the header from the pipeline, its wasted space, and move the build drop down to the top of the notes
-- #1147 b119 New 🧹 Clear button on the Dev page opens a dialog with a checkbox for each status (Idea / Bug / Shipped / Verified, with counts). Tick the ones to clear and it removes just your own notes in those statuses. Changelog entries (the seeded build notes) are protected and never cleared — the dialog shows how many are kept.
-- 🤖 #1141 b107 the verified items wont be sruck out (Dev) — notes: entries like this should change status to shipped if its the new build to checked before it goes to verified
-- #1140 b105 remove "for ai" from the tracks. bug&ideas merges to shipped, and then verfied. every task will have either idea/bug/shipped or verified status (Dev)
-- #1139 b104 idea sent (Dev)
-- #1137 b102 by the top right buttons, it will have a the send button and a voice note button for voice entry of the note. the note/recording will also be tagged with the page it was logged from and the timestamp. and text size in the whole app will be able to be adjusted in the main settings, yes but the voice note doesnt end up anywhere, it supposed to show up in the dev notes list (Dev)
-- #1136 b102 this box here needs to be pinned to the top of the app by the top right buttons, beside the send button will be a voice note button for voice entry of the note. the note/recording will also be tagged with the page it was logged from and the timestamp. (Dev)
-- 🤖 #1133 b98 make the deventry field collapsible, it only appears once the bulb or bug button has been pushed, and when you push enter it adds the instruction. after the text is entered it shows this visually with a sent message once its verified by reading it back. also when entering comments enter commits, this is for all text entry field in the program
-- #1095 b68 Profile photo: click the sidebar home button when already Home (or right-click it) to upload an image and crop/zoom it to a circle. Shows on the home button.
-- #1090 b68 Fasting console (Diet → Fasting): start/stop fasts with a protocol (16:8, 18:6, 20:4, OMAD, 36h, custom) + notes, a live count-up clock with a target progress bar and beep when hit, and a logged history with durations + average. Runs even when you switch pages.
-- #1091 b68 Cooking timers (Diet → Fasting): named timers or quick 1/3/5/10/15/30-minute presets, live countdown, pause/reset/remove, and a beep + alert when done. Persists across reloads.
-- #1085 b65 Inventory page → 🔍 Sync & debug panel: logs every step of a parts push/pull (request URL, columns found, column map, each row, and the Apps Script reply) with a 📋 Copy for AI button, plus ⬆ Push orders / ⬇ Pull orders / ⬆ Push inventory buttons and a status line for write-back URL + both tabs.
-- #1086 b65 Inventory tab sync: received / in-hand parts (status received, checked, stock, or any qty received) are written to a separate Inventory tab — paste its link in TTR ⚙. Code.gs upsertInventory auto-creates the columns.
-- #1075 b62 NEXT — Parts Orders sync: make the Parts Orders tab the source of truth. Proposed columns: Date ordered, Job number, Supplier, Item code, Description, Amount, Status, PO/REF, ETA, Description Link, Qty, Qty received, Unit cost, Unit sell, Shipping, Date received, Date checked, Date used, Notes, Updates(log), Location, App ID. Confirm/adjust these and I’ll wire the pull+push. — notes: schemas good
-- #1044 b56 Universal part card (click a part anywhere); per-part supplier-contact link, product link, datasheet link & supersession notes; where-used list. TTR tab split into sub-tabs (Jobs · Inventory · Suppliers · Tasks · Business plan); Business plan = notes + linkable to-do with task dependencies.
-- #1043 b58 Parts library & inventory: shared catalogue (cost, sell, supplier, dept, qty-on-hand, stock value) on Assets → 📦 Parts and a TTR-only view on the TTR tab. Full status lifecycle (to order→ordered→shipping→received→checked→used/stock/disposed), due dates with overdue flagging + ⏰ follow-up reminders, library autocomplete on jobs, and job profit = Σ(sell−cost). Existing job parts migrated in. — notes: where we choose the staus of a product it needs to have a button to progress to the next status, if it is a finished job then there will be multiple option eg ewate refurb job closed
-- #1042 b56 Add parts directly from the job tracker — the job modal has a parts add-row with a target picker (the job itself, or any of its tasks). Job-level & task-level parts share the ordered/awaiting/received lifecycle, roll up together and sync to the sheet.
-- #1041 b56 Job parts are order line-items now: each shows its ordered date and an ⏳ awaiting / ✓ received status with the arrival date (one-tap “received” or pick a date). Parts label & job card show an awaiting count. First step toward inventory & order tracking.
-- #1040 b40 Gold/silver now auto-added & priced (the spot call was being skipped when no live metal existed). Markets ⚙ settings: metals API base URL, USD→NZD override, Add Gold & Silver. Console logs skip/start/FX/computed steps.
-- #1039 b40 Holdings are editable (detail card with name/sym/qty/price/live/notes/tasks/delete), reachable from Markets or Liquid assets; the crypto & bullion block collapses. Added a price-feed debug console on the Markets tab logging raw gold-api/FX replies to debug gold & silver.
-- #1038 b40 Crypto & bullion show under Liquid assets (valued live, qty × price) and count toward Net worth; the same holdings power the Markets ticker. Live gold/silver hardened with USD→NZD fallbacks.
-- #1037 b40 Markets: gold/silver now use real XAU/XAG spot from gold-api converted to live NZD (was KAG/PAXG proxies). Money tab: a Master-budget panel reads income/expenses/surplus from your budget Google Sheet (Weekly/Annual toggle).
-- #1035 b36 TTR auto-refresh timer (Off/1/5/15/30 min, behind the ⚙ gear) quietly re-pulls the sheet while you’re on the tab, so sheet-side status/note edits appear automatically.
-- #1034 b40 Job status is two-way with the sheet — changing it in Mtasks writes to the Status cell, and a status edited on the sheet flows back into Mtasks on Sync (sheet is the source of truth). Re-deploy the Apps Script (adds setStatus).
-
-## Open backlog — not yet flagged (40)
-- #1176 b132 AI handoff report now LEADS with a “🤖 NEXT TO FIX — Andrew flagged these for you” section containing only the items you 🤖-flagged, so they point at me as the task list for the round instead of being buried in the 40-item backlog. Added a “🧠 Coding tips” section too (how you like to work). The general open list is now “Open backlog — not yet flagged” and excludes the flagged ones (no duplication).
+## 🧠 Coding tips — how Andrew likes to work (2)
 - #1174 b130 when sending the mtasks download, put it in a mtasks folder, or do you have to zip it to do that? (Dev)
 - #1173 b130 note test (Dev)
+
+## Bugs fixed since last commit (1)
+- 🤖 #1175 b130 make the nuke button searchfor the highest version file in the mcam folder change its name to mtasks.html  and replace it original mtasks.html and relaunch (Calendar)
+
+## Ideas realised since last commit (0)
+_none_
+
+## Open backlog — not yet flagged (40)
 - #1171 b129 Enter now commits in every single-line text field across the app (the rest of #1133). Typing in a field and pressing Enter saves it (the field blurs, firing its save); inside a dialog Enter also clicks Save to confirm it; comment/reply prompts commit on Enter too. Multi-line textareas are left alone so you can still add line breaks. The capture bar keeps its own Enter-to-log behaviour.
 - #1170 b128 Capture field is now collapsible (#1133). The top capture bar shows just the 🐞 and 💡 buttons until you tap one — then the text field opens. Push Enter to log; the field collapses again and a read-back confirmation appears: “✓ #<id> logged: ‘your text’”, so you can see exactly what was captured and its id. Esc closes the field without logging. (Enter-to-commit on every other text field in the app is a separate follow-up.)
 - #1169 b127 Versioned builds + smart refresh. (1) Builds are now versioned on disk as mtasks-.html instead of overwriting one file, so old builds stay for rollback. (2) The server serves the HIGHEST build number, read from INSIDE each file (the VERSION line) — reliable even when the name has a (1) suffix or a stray digit like mtasks3.html. (3) The top-right Refresh button now checks the server for a newer build and loads it if there is one (else tells you you’re current), instead of a blind browser reload. New endpoint GET /version. Deploy writes mtasks-.html; ⚡ Deploy-newest picks the highest build by content.
@@ -97,30 +38,33 @@ These are the tasks to work on this round, highest priority first.
 - #1127 b92 add a take photo button, when clicked allows you attach the photo to a block on the calendar it can be linked with tasks or jobs.
  and then that photothumbnail will show up on the calendar
 - #1125 b92 remove the window bar in full screen mode, have a exit fullscreen icon clickable top right to exit — notes: if you long click the exit full screen button it minimises the app
-- #1120 the microphone button will be moved to the top right menu, if on mobile or tablet it will be a permanent floating mic button on the bottom right of the screen. notes and files will be moved to the side bar and will have a downloads icon (Personal)
-- #1119 Voice notes on the home page: press & hold the mic to record, release to save, tap to play back. Assign a note to any task, asset, TTR job or contact. Saved in the data file so they sync. Needs mic + https (the Tailscale URL works).
 - #1116 b84 Safe multi-device: ID counters now jump above the highest existing ID on every load (no re-issued IDs after a sync); saves are stamped with a device name (set it in Settings → Drive sync); and a newer copy from a different device prompts Load/Keep instead of silently overwriting. — notes: how do i test this?
 - #1115 b83 Data-safety guards for Drive sync: saves are now confirmed by reading back from Drive (no more silent no-cors failures) with a Check Drive copy button; a pre-overwrite snapshot lets you Undo a load/import; and an empty or unreadable copy can never clobber real data. — notes: can we write a little script to check this
 - #1114 b82 Tess pet-care module (new 🐾 sidebar tab): food/water bowl fill-time tracking, a live toilet countdown timer that starts when the food bowl is filled (beeps when due), quick-log buttons (food/water/wee/poo/walk/treat/meds) with daily tallies, care reminders (worming, flea, vaccination, vet, grooming) with next-due dates, and a weight log with trend.
 - #1113 b81 Health tab: readings & activities are now editable (click a row) and back-datable (date picker on both forms). Added an At-a-glance summary (weight + change, BP, HR, INR, sleep avg, weekly active minutes) and Sleep + blood-pressure trend lines.
 - #1111 b79 Invoices now have Edit and Save buttons: an invoice opens as a clean read-only view, and the editable controls only appear after you click ✎ Edit. ✓ Save returns it to the tidy view. New invoices open in edit mode.
-- #105 items in dev tools go through a pipeline, like a train track with stops, the train trac will like a status display. there will ve a dro down with the build number or all selected by default, seleting a build nuumber will show the entries fot that build and the train track for that build
 - #1109 b77 Fixed the dark theme boxes showing through the white invoice (date/qty/price fields and the + buttons are now light). Added a full control bar: Mark sent, Mark paid, Email, Print, Download, Tracker, Cancel and Delete — and every field on the invoice is editable inline.
 - #1108 b76 Invoice prettied up with your real logo and template styling, and new invoices now write into the Job Tracker (Invoice #, Date, Status, Amount on the job row) — the ⬆ Tracker button pushes on demand. Requires the write-back URL + the updated Code.gs (setInvoice action) deployed as a new version.
 - #1107 b75 Top-right ＋ → Task now has 🔴 Urgent / 📅 Today / 📅 Tomorrow quick-tags. The task still goes into the area you choose (in the ledger with the rest), and tagging it with a date makes it show on your home deck instead of being undated and easy to miss.
 - #1106 b74 Invoice redesigned to match your real template: logo, right-aligned business block, Bill To, green-header Items table with Technician Services / Fault / Work carried out lines, Subtotal/Total, footer. Defaults pre-filled with your business details (no GST, INV-00041 numbering). Print/PDF matches. Tagline, zero-pad digits and show-logo toggle added to Invoice setup.
-- #1104 b73 Invoicing tab in TTR: 🧾 button beside each job (or + New invoice → pick a job) creates an invoice that pulls in the job details, logged time (as labour) and parts used. Editable line items, GST, footer notes, live totals, Print/PDF, and Draft/Sent/Due/Paid/Cancelled tracking with filters.
 - #1105 b73 Invoice setup page: TTR → Jobs → ⚙ → Invoice setup — business name, GST number/rate, hourly rate, prefix, next number, payment terms, bank details and default footer.
+- #1104 b73 Invoicing tab in TTR: 🧾 button beside each job (or + New invoice → pick a job) creates an invoice that pulls in the job details, logged time (as labour) and parts used. Editable line items, GST, footer notes, live totals, Print/PDF, and Draft/Sent/Due/Paid/Cancelled tracking with filters.
 - #1103 b72 Business expenses are clickable to edit: tap an expense on TTR → Expenses to change its name, amount, period, % business and notes (or delete it).
-- #1101 b71 Search now finds synced Job Tracker rows (e.g. “kieran”) — they weren’t searched before b70. Also added job notes, completed history (deduped) and budget rows.
 - #1102 b71 LATER: add filter chips / radio buttons to the search bar to narrow results by data type (jobs, tasks, inventory, parts, contacts…) or by status. For now search shows everything, typed and colour-coded.
+- #1101 b71 Search now finds synced Job Tracker rows (e.g. “kieran”) — they weren’t searched before b70. Also added job notes, completed history (deduped) and budget rows.
 - #1100 b70 Universal search: the 🔍 bar (or press /) now searches tasks, areas, notes, shopping, calendar, parts & orders, jobs (in-app + on-sheet), assets, expenses, budget, markets, contacts, health/activities, fasts, food log, and the dev/bug-fix log. Results are typed and jump to the right page on click.
-- #104 make business expenses clickable to edit (TTR · Expenses)
-- #101 add a live job timer so i can time my sessions, this will be able to tagged to any job or task
 - #1092 b65 Verified: clicking Add job lands you on the Jobs list with the new job at the top (build 61), and the New job form is grouped Customer/Appliance/Appointment with roomier boxes (build 60). Tick the two add-job items to clear them.
+- #1083 b63 Parts sync clarity: buttons now read ⬆ Push to sheet (app→tab) and ⬇ Pull from sheet (tab→app). A new Library part is your catalogue — it appears on the Parts Orders tab once you place an order (+ order) or it has stock, not on creation.
+- #1081 b62 Phase 2 Parts Orders sync: TTR ⚙ → paste the Parts Orders tab link → Sync parts (pull, matching by App ID) and Push all ↑ (write every order up). The tab is the source of truth; all part-order fields map both ways.
+- #1080 b61 Typing in the New job form no longer disappears: the job-tracker auto-sync won’t re-render the page while you’re on that form.
+- #1079 b61 Fixed the New job form layout — the fault/notes boxes were unstyled outside a modal and floated; .mfield now styles everywhere.
+- #1078 b61 Add job now works: the form is backed by a draft so the auto-sync re-render can no longer wipe what you typed, and Add job reads the draft (not the live fields). It adds the job, pushes to the tracker when write-back is on, and switches to the Jobs list.
+- #1077 b60 Add job button now gives a clear ✓ confirmation, blocks an empty customer name (and focuses it), and lands you on the Jobs list with the new job at the top.
+- #1076 b60 New job form rebuilt: removed the job-number field (auto-claimed), grouped into Customer / Appliance / Appointment sections with the appointment at the bottom and roomier boxes.
+- #1074 b59 Part status list can be pulled from a tab on your spreadsheet (TTR ⚙ → Part status list → Pull statuses). Column A, in lifecycle order. The whole app uses it; Reset reverts to the built-in list.
 
 ## Recent build notes
-- b132 — Handoff points the flagged items at the AI. The report now leads with “🤖 NEXT TO FIX — Andrew flagged these for you” — only the items you tapped 🤖 on — so they read as the task list for this round instead of being sorted-first inside a 40-item backlog. A 🧠 Coding tips section was added (how you like to work). The remaining open items become “Open backlog — not yet flagged” and the flagged ones are no longer duplicated there. Flag with the 🤖 button on any entry; it goes straight to the top of the next handoff.
+- b133 — Commit-aware handoff + self-clearing flags. Builds on the b132 leading-section handoff. Two filters stop old work dragging the AI backwards: (1) Bugs fixed / Ideas realised now only list work done since the last git commit (notes from already-committed builds drop off); (2) committing a build auto-clears every 🤖 flag on that build and earlier, so a stale flag can never resurface — flags now mean “tackle this round,” and you re-flag after each commit. The report header notes which committed build it’s counting from. NEXT TO FIX now orders by most-recently-flagged first.
 - b131 — “Open Claude” on the handoff. Next to copy in the AI handoff URL box there’s now an Open Claude ↗ button — one tap copies the tokenized URL and opens your Claude chat list (newest first), so you paste it straight into the latest chat. #1171. (On #1172 — there’s no public URL that opens a specific most-recent conversation, so the chat list is the closest reliable target.)
 - b130 — One notes button, four kinds. The capture bar is now a single 📝 button — tap it and the field opens with four radio chips: 📝 Note, 🐞 Bug, 💡 Idea, 🧠 Coding tip (Note selected by default). Pick one, type, Enter to log with the read-back confirmation. General notes appear in a Notes card on Home; coding tips (and notes) also land in a new “Notes & coding tips” panel on the Dev page, tagged and kept out of the build pipeline so they don’t clutter the verify flow. Coding tips are for capturing how we like to work together. Implements #1170.
 - b129 — Enter commits everywhere. Finishing #1133: pressing Enter in any single-line text field across the app now commits it — the field saves (it blurs, firing its onchange save), and inside a dialog Enter also confirms by clicking Save. Comment/reply entry commits on Enter as well. Multi-line textareas are deliberately left alone so you can still type line breaks (use the Save button there). The capture bar keeps its own Enter-to-log. One global handler, so it covers existing and future fields.

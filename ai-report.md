@@ -1,12 +1,8 @@
 # Mtasks — AI handoff report
-1.2 · build 133 · generated 2026-06-26 · from web · since build 129 committed
+1.2 · build 133 · generated 2026-06-26 · from web · since build 133 committed
 
-## 🤖 NEXT TO FIX — Andrew flagged these for you (6)
+## 🤖 NEXT TO FIX — Andrew flagged these for you (2)
 These are the tasks to work on this round, highest priority first. Treat everything below as reference only — don’t pick up unflagged items unless they inform these.
-- 🤖 #1177 b132 new devnotes will automatically be marked for ai (Dev)
-- 🤖 #1176 b132 needs to be the time to let tess as the most important thing on the home screen, not visible when its inactive, and have a took her button it to dismiss, add stuff so that when an alarm is missed it migt be linked to a recent "accident" on the carpet (Personal)
-- 🤖 #1172 b129 is there a way for the claude button to direct it to the most recent chat? (Dev)
-- 🤖 #1099 b69 make Sidebar icons bigger so there’s less empty space in each tile.
 - 🤖 #106 the arrows in the invoice wil increment the cost $1 at a time, the box will be wider so 10000.00 is readable (TTR · )
 - 🤖 #93 when click add job button in add job form the form doesnt take you back to the jobs tab (TTR · )
 
@@ -14,13 +10,17 @@ These are the tasks to work on this round, highest priority first. Treat everyth
 - #1174 b130 when sending the mtasks download, put it in a mtasks folder, or do you have to zip it to do that? (Dev)
 - #1173 b130 note test (Dev)
 
-## Bugs fixed since last commit (1)
-- 🤖 #1175 b130 make the nuke button searchfor the highest version file in the mcam folder change its name to mtasks.html  and replace it original mtasks.html and relaunch (Calendar)
+## Bugs fixed since last commit (0)
+_none_
 
 ## Ideas realised since last commit (0)
 _none_
 
 ## Open backlog — not yet flagged (40)
+- #1177 b132 new devnotes will automatically be marked for ai (Dev)
+- #1176 b132 needs to be the time to let tess as the most important thing on the home screen, not visible when its inactive, and have a took her button it to dismiss, add stuff so that when an alarm is missed it migt be linked to a recent "accident" on the carpet (Personal)
+- #1176 b132 AI handoff report now LEADS with a “🤖 NEXT TO FIX — Andrew flagged these for you” section containing only the items you 🤖-flagged, so they point at me as the task list for the round instead of being buried in the 40-item backlog. Added a “🧠 Coding tips” section too (how you like to work). The general open list is now “Open backlog — not yet flagged” and excludes the flagged ones (no duplication).
+- #1172 b129 is there a way for the claude button to direct it to the most recent chat? (Dev)
 - #1171 b129 Enter now commits in every single-line text field across the app (the rest of #1133). Typing in a field and pressing Enter saves it (the field blurs, firing its save); inside a dialog Enter also clicks Save to confirm it; comment/reply prompts commit on Enter too. Multi-line textareas are left alone so you can still add line breaks. The capture bar keeps its own Enter-to-log behaviour.
 - #1170 b128 Capture field is now collapsible (#1133). The top capture bar shows just the 🐞 and 💡 buttons until you tap one — then the text field opens. Push Enter to log; the field collapses again and a read-back confirmation appears: “✓ #<id> logged: ‘your text’”, so you can see exactly what was captured and its id. Esc closes the field without logging. (Enter-to-commit on every other text field in the app is a separate follow-up.)
 - #1169 b127 Versioned builds + smart refresh. (1) Builds are now versioned on disk as mtasks-.html instead of overwriting one file, so old builds stay for rollback. (2) The server serves the HIGHEST build number, read from INSIDE each file (the VERSION line) — reliable even when the name has a (1) suffix or a stray digit like mtasks3.html. (3) The top-right Refresh button now checks the server for a newer build and loads it if there is one (else tells you you’re current), instead of a blind browser reload. New endpoint GET /version. Deploy writes mtasks-.html; ⚡ Deploy-newest picks the highest build by content.
@@ -53,15 +53,11 @@ _none_
 - #1102 b71 LATER: add filter chips / radio buttons to the search bar to narrow results by data type (jobs, tasks, inventory, parts, contacts…) or by status. For now search shows everything, typed and colour-coded.
 - #1101 b71 Search now finds synced Job Tracker rows (e.g. “kieran”) — they weren’t searched before b70. Also added job notes, completed history (deduped) and budget rows.
 - #1100 b70 Universal search: the 🔍 bar (or press /) now searches tasks, areas, notes, shopping, calendar, parts & orders, jobs (in-app + on-sheet), assets, expenses, budget, markets, contacts, health/activities, fasts, food log, and the dev/bug-fix log. Results are typed and jump to the right page on click.
+- #1099 b69 make Sidebar icons bigger so there’s less empty space in each tile.
 - #1092 b65 Verified: clicking Add job lands you on the Jobs list with the new job at the top (build 61), and the New job form is grouped Customer/Appliance/Appointment with roomier boxes (build 60). Tick the two add-job items to clear them.
 - #1083 b63 Parts sync clarity: buttons now read ⬆ Push to sheet (app→tab) and ⬇ Pull from sheet (tab→app). A new Library part is your catalogue — it appears on the Parts Orders tab once you place an order (+ order) or it has stock, not on creation.
 - #1081 b62 Phase 2 Parts Orders sync: TTR ⚙ → paste the Parts Orders tab link → Sync parts (pull, matching by App ID) and Push all ↑ (write every order up). The tab is the source of truth; all part-order fields map both ways.
 - #1080 b61 Typing in the New job form no longer disappears: the job-tracker auto-sync won’t re-render the page while you’re on that form.
-- #1079 b61 Fixed the New job form layout — the fault/notes boxes were unstyled outside a modal and floated; .mfield now styles everywhere.
-- #1078 b61 Add job now works: the form is backed by a draft so the auto-sync re-render can no longer wipe what you typed, and Add job reads the draft (not the live fields). It adds the job, pushes to the tracker when write-back is on, and switches to the Jobs list.
-- #1077 b60 Add job button now gives a clear ✓ confirmation, blocks an empty customer name (and focuses it), and lands you on the Jobs list with the new job at the top.
-- #1076 b60 New job form rebuilt: removed the job-number field (auto-claimed), grouped into Customer / Appliance / Appointment sections with the appointment at the bottom and roomier boxes.
-- #1074 b59 Part status list can be pulled from a tab on your spreadsheet (TTR ⚙ → Part status list → Pull statuses). Column A, in lifecycle order. The whole app uses it; Reset reverts to the built-in list.
 
 ## Recent build notes
 - b133 — Commit-aware handoff + self-clearing flags. Builds on the b132 leading-section handoff. Two filters stop old work dragging the AI backwards: (1) Bugs fixed / Ideas realised now only list work done since the last git commit (notes from already-committed builds drop off); (2) committing a build auto-clears every 🤖 flag on that build and earlier, so a stale flag can never resurface — flags now mean “tackle this round,” and you re-flag after each commit. The report header notes which committed build it’s counting from. NEXT TO FIX now orders by most-recently-flagged first.

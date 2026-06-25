@@ -1,10 +1,9 @@
 # Mtasks — AI handoff report
-1.2 · build 134 · generated 2026-06-26 · from web · since build 134 committed
+1.2 · build 135 · generated 2026-06-26 · from web · since build 135 committed
 
-## 🤖 NEXT TO FIX — Andrew flagged these for you (2)
+## 🤖 NEXT TO FIX — Andrew flagged these for you (0)
 These are the tasks to work on this round, highest priority first. Treat everything below as reference only — don’t pick up unflagged items unless they inform these.
-- 🤖 #106 the arrows in the invoice wil increment the cost $1 at a time, the box will be wider so 10000.00 is readable (TTR · )
-- 🤖 #93 when click add job button in add job form the form doesnt take you back to the jobs tab (TTR · )
+_nothing flagged for this round_
 
 ## 🧠 Coding tips — how Andrew likes to work (2)
 - #1174 b130 when sending the mtasks download, put it in a mtasks folder, or do you have to zip it to do that? (Dev)
@@ -17,7 +16,7 @@ _none_
 _none_
 
 ## Open backlog — not yet flagged (40)
-- #1178 b134 testing new dev note (Dev)
+- #1178 b135 shipped items should move to verified and disappear of the list when you check the box (Dev)
 - #1176 b132 AI handoff report now LEADS with a “🤖 NEXT TO FIX — Andrew flagged these for you” section containing only the items you 🤖-flagged, so they point at me as the task list for the round instead of being buried in the 40-item backlog. Added a “🧠 Coding tips” section too (how you like to work). The general open list is now “Open backlog — not yet flagged” and excludes the flagged ones (no duplication).
 - #1172 b129 is there a way for the claude button to direct it to the most recent chat? (Dev)
 - #1171 b129 Enter now commits in every single-line text field across the app (the rest of #1133). Typing in a field and pressing Enter saves it (the field blurs, firing its save); inside a dialog Enter also clicks Save to confirm it; comment/reply prompts commit on Enter too. Multi-line textareas are left alone so you can still add line breaks. The capture bar keeps its own Enter-to-log behaviour.
@@ -60,9 +59,9 @@ _none_
 - #1079 b61 Fixed the New job form layout — the fault/notes boxes were unstyled outside a modal and floated; .mfield now styles everywhere.
 
 ## Recent build notes
+- b135 — Fix: build-less flags now clear on commit. The reason #106 and #93 kept coming back to the AI every round even after they were fixed: the commit-clears-flags logic only cleared 🤖 flags on notes that had a build number, so older items logged without one (like #106 / #93) were immune — they survived every commit and re-served themselves as if still to-do. Committing a build now clears flags on build-less notes too (they belong to the current round), while flags on any future build are still preserved. So the handoff finally stops looping on already-done items. (#106 invoice $1-step/wider box and #93 add-job→Jobs-tab redirect were both already shipped in b134 — this is why they looked unfixed.)
 - b134 — Auto-flag new dev notes + Tess on Home + invoice/sidebar polish. #1177: every new bug or idea (typed or voice) now auto-flags 🤖 for AI the moment it’s logged, so it reaches the next handoff without you remembering to tap the robot (notes & coding tips stay unflagged; flags still self-clear on commit). #1176: a 🐾 Tess card on Home appears only when something’s active — toilet timer running/overdue, or a care reminder due — with a live countdown, Took her out (wee/poo) to dismiss, a 🧽 Accident button that links a carpet accident to the missed reminder, and due-care quick-Done. Invisible when nothing’s pending. #1099: bigger sidebar glyphs (less empty space per tile). #106: invoice price field steps $1 per arrow and the Price/Amount columns widened so 10000.00 reads. #93: Add job now lands on the Jobs tab scrolled to the top so the redirect is unmistakable.
 - b133 — Commit-aware handoff + self-clearing flags. Builds on the b132 leading-section handoff. Two filters stop old work dragging the AI backwards: (1) Bugs fixed / Ideas realised now only list work done since the last git commit (notes from already-committed builds drop off); (2) committing a build auto-clears every 🤖 flag on that build and earlier, so a stale flag can never resurface — flags now mean “tackle this round,” and you re-flag after each commit. The report header notes which committed build it’s counting from. NEXT TO FIX now orders by most-recently-flagged first.
 - b131 — “Open Claude” on the handoff. Next to copy in the AI handoff URL box there’s now an Open Claude ↗ button — one tap copies the tokenized URL and opens your Claude chat list (newest first), so you paste it straight into the latest chat. #1171. (On #1172 — there’s no public URL that opens a specific most-recent conversation, so the chat list is the closest reliable target.)
 - b130 — One notes button, four kinds. The capture bar is now a single 📝 button — tap it and the field opens with four radio chips: 📝 Note, 🐞 Bug, 💡 Idea, 🧠 Coding tip (Note selected by default). Pick one, type, Enter to log with the read-back confirmation. General notes appear in a Notes card on Home; coding tips (and notes) also land in a new “Notes & coding tips” panel on the Dev page, tagged and kept out of the build pipeline so they don’t clutter the verify flow. Coding tips are for capturing how we like to work together. Implements #1170.
 - b129 — Enter commits everywhere. Finishing #1133: pressing Enter in any single-line text field across the app now commits it — the field saves (it blurs, firing its onchange save), and inside a dialog Enter also confirms by clicking Save. Comment/reply entry commits on Enter as well. Multi-line textareas are deliberately left alone so you can still type line breaks (use the Save button there). The capture bar keeps its own Enter-to-log. One global handler, so it covers existing and future fields.
-- b128 — Collapsible capture field with read-back. The pinned capture bar now shows only the 🐞 bug and 💡 idea buttons until you tap one — then the text field opens (focused, with a matching placeholder). Push Enter to log; the field collapses back and a read-back confirmation appears — “✓ #<id> logged: ‘your text’” — so you can see exactly what was captured and its entry id. Esc closes the field without logging. Implements #1133. (Making Enter commit on every text field across the app is a deliberate separate pass — flagged for a follow-up so it doesn’t break multi-line fields.)

@@ -1,11 +1,10 @@
 # Mtasks — AI handoff report
 1.2 · build 132 · generated 2026-06-26 · from web
 
-## 🤖 NEXT TO FIX — Andrew flagged these for you (6)
+## 🤖 NEXT TO FIX — Andrew flagged these for you (5)
 These are the tasks to work on this round, highest priority first.
+- 🤖 #1176 b132 needs to be the time to let tess as the most important thing on the home screen, not visible when its inactive, and have a took her button it to dismiss, add stuff so that when an alarm is missed it migt be linked to a recent "accident" on the carpet (Personal)
 - 🤖 #1172 b129 is there a way for the claude button to direct it to the most recent chat? (Dev)
-- 🤖 #1171 b129 add a link to claude ai next to the copy button for the ai handoff. (Dev)
-- 🤖 #1133 b98 make the deventry field collapsible, it only appears once the bulb or bug button has been pushed, and when you push enter it adds the instruction. after the text is entered it shows this visually with a sent message once its verified by reading it back. also when entering comments enter commits, this is for all text entry field in the program
 - 🤖 #106 the arrows in the invoice wil increment the cost $1 at a time, the box will be wider so 10000.00 is readable (TTR · )
 - 🤖 #1099 b69 make Sidebar icons bigger so there’s less empty space in each tile.
 - 🤖 #93 when click add job button in add job form the form doesnt take you back to the jobs tab (TTR · )
@@ -46,6 +45,7 @@ These are the tasks to work on this round, highest priority first.
 - #1072 b58 Load safety: a render error now shows on screen with the message instead of blanking, and never overwrites your saved data with the demo seed.
 
 ## Ideas realised (30)
+- 🤖 #1171 b129 add a link to claude ai next to the copy button for the ai handoff. (Dev)
 - 🤖 #1170 b129 add a programming rules button here as well so we can note coding tips and ways we like to work together. in fact just have one notes button, when pushed changes to 4 radio buttons, a general note that will be ldisplayed on the home screen, a bug, a idea, a coding tip (Calendar)
 - #1162 b120 how do we automate sending you the bugreport from the devtools script so you can begin work on the next version? (Dev)
 - #1158 b117 add a collapsabile github control panel with all the useful features and links (Dev)
@@ -58,6 +58,7 @@ These are the tasks to work on this round, highest priority first.
 - #1139 b104 idea sent (Dev)
 - #1137 b102 by the top right buttons, it will have a the send button and a voice note button for voice entry of the note. the note/recording will also be tagged with the page it was logged from and the timestamp. and text size in the whole app will be able to be adjusted in the main settings, yes but the voice note doesnt end up anywhere, it supposed to show up in the dev notes list (Dev)
 - #1136 b102 this box here needs to be pinned to the top of the app by the top right buttons, beside the send button will be a voice note button for voice entry of the note. the note/recording will also be tagged with the page it was logged from and the timestamp. (Dev)
+- 🤖 #1133 b98 make the deventry field collapsible, it only appears once the bulb or bug button has been pushed, and when you push enter it adds the instruction. after the text is entered it shows this visually with a sent message once its verified by reading it back. also when entering comments enter commits, this is for all text entry field in the program
 - #1095 b68 Profile photo: click the sidebar home button when already Home (or right-click it) to upload an image and crop/zoom it to a circle. Shows on the home button.
 - #1090 b68 Fasting console (Diet → Fasting): start/stop fasts with a protocol (16:8, 18:6, 20:4, OMAD, 36h, custom) + notes, a live count-up clock with a target progress bar and beep when hit, and a logged history with durations + average. Runs even when you switch pages.
 - #1091 b68 Cooking timers (Diet → Fasting): named timers or quick 1/3/5/10/15/30-minute presets, live countdown, pause/reset/remove, and a beep + alert when done. Persists across reloads.
@@ -74,8 +75,6 @@ These are the tasks to work on this round, highest priority first.
 - #1037 b40 Markets: gold/silver now use real XAU/XAG spot from gold-api converted to live NZD (was KAG/PAXG proxies). Money tab: a Master-budget panel reads income/expenses/surplus from your budget Google Sheet (Weekly/Annual toggle).
 - #1035 b36 TTR auto-refresh timer (Off/1/5/15/30 min, behind the ⚙ gear) quietly re-pulls the sheet while you’re on the tab, so sheet-side status/note edits appear automatically.
 - #1034 b40 Job status is two-way with the sheet — changing it in Mtasks writes to the Status cell, and a status edited on the sheet flows back into Mtasks on Sync (sheet is the source of truth). Re-deploy the Apps Script (adds setStatus).
-- #1031 b36 Adding a job note auto-appends it (with the date) to the end of that row’s Notes cell in the Google Sheet via the write-back script — no manual Sync needed, and it never clobbers existing sheet notes. (Re-deploy the updated Apps Script.)
-- #1029 b40 Social contacts group by trust level (Family · Friend · Colleague · Supplier · Customer · Other) into sections, and each has a “services / items they trade” field shown on the card.
 
 ## Open backlog — not yet flagged (40)
 - #1176 b132 AI handoff report now LEADS with a “🤖 NEXT TO FIX — Andrew flagged these for you” section containing only the items you 🤖-flagged, so they point at me as the task list for the round instead of being buried in the 40-item backlog. Added a “🧠 Coding tips” section too (how you like to work). The general open list is now “Open backlog — not yet flagged” and excludes the flagged ones (no duplication).

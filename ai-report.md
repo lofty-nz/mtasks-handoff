@@ -1,7 +1,20 @@
 # Mtasks — AI handoff report
-1.2 · build 130 · generated 2026-06-26 · from web
+1.2 · build 132 · generated 2026-06-26 · from web
+
+## 🤖 NEXT TO FIX — Andrew flagged these for you (6)
+These are the tasks to work on this round, highest priority first.
+- 🤖 #1172 b129 is there a way for the claude button to direct it to the most recent chat? (Dev)
+- 🤖 #1171 b129 add a link to claude ai next to the copy button for the ai handoff. (Dev)
+- 🤖 #1133 b98 make the deventry field collapsible, it only appears once the bulb or bug button has been pushed, and when you push enter it adds the instruction. after the text is entered it shows this visually with a sent message once its verified by reading it back. also when entering comments enter commits, this is for all text entry field in the program
+- 🤖 #106 the arrows in the invoice wil increment the cost $1 at a time, the box will be wider so 10000.00 is readable (TTR · )
+- 🤖 #1099 b69 make Sidebar icons bigger so there’s less empty space in each tile.
+- 🤖 #93 when click add job button in add job form the form doesnt take you back to the jobs tab (TTR · )
+
+## 🧠 Coding tips — how Andrew likes to work (1)
+- #1174 b130 when sending the mtasks download, put it in a mtasks folder, or do you have to zip it to do that? (Dev)
 
 ## Bugs fixed (30)
+- 🤖 #1175 b130 make the nuke button searchfor the highest version file in the mcam folder change its name to mtasks.html  and replace it original mtasks.html and relaunch (Calendar)
 - 🤖 #1163 b120 lets put deploy and git hub side by side 50/50 each, theres a lot of wasted space (Dev)
 - #1161 b119 Removed the redundant footer “🛠 Log a fix / idea” box that was tacked onto the bottom of every non-Dev page. The pinned capture bar at the top (🐞/💡 picker, text field, Send, 🎙 voice) is already global and tags every note with the page you logged it from — so the footer box was a stripped-down duplicate (no picker, no voice). One toolbar everywhere now. Resolves #1156.
 - 🤖 #1157 b117 verify git hub works (Dev)
@@ -31,9 +44,9 @@
 - #1070 b58 All job-status dropdowns (New job, in-app editor, and clicking into a synced job) now pull from the sheet’s own status list, plus the extras. Fixes the new statuses not being selectable on synced jobs.
 - #1071 b58 Part order dialog: a → next button advances the part one step through its lifecycle (to order → ordered → shipping → received → checked → in stock → used → disposed), timestamped.
 - #1072 b58 Load safety: a render error now shows on screen with the message instead of blanking, and never overwrites your saved data with the demo seed.
-- #1068 b56 Deploy the updated Code.gs: paste it over your Apps Script, then Deploy → Manage deployments → Edit (pencil) → Version: New version → Deploy. This activates addJob (push new jobs) and deleteJob (Delete-job button).
 
 ## Ideas realised (30)
+- 🤖 #1170 b129 add a programming rules button here as well so we can note coding tips and ways we like to work together. in fact just have one notes button, when pushed changes to 4 radio buttons, a general note that will be ldisplayed on the home screen, a bug, a idea, a coding tip (Calendar)
 - #1162 b120 how do we automate sending you the bugreport from the devtools script so you can begin work on the next version? (Dev)
 - #1158 b117 add a collapsabile github control panel with all the useful features and links (Dev)
 - #1152 b114 add id# to the dev notes list so it say (idea tag, idea description, id#) (Dev)
@@ -63,17 +76,9 @@
 - #1034 b40 Job status is two-way with the sheet — changing it in Mtasks writes to the Status cell, and a status edited on the sheet flows back into Mtasks on Sync (sheet is the source of truth). Re-deploy the Apps Script (adds setStatus).
 - #1031 b36 Adding a job note auto-appends it (with the date) to the end of that row’s Notes cell in the Google Sheet via the write-back script — no manual Sync needed, and it never clobbers existing sheet notes. (Re-deploy the updated Apps Script.)
 - #1029 b40 Social contacts group by trust level (Family · Friend · Colleague · Supplier · Customer · Other) into sections, and each has a “services / items they trade” field shown on the card.
-- #1030 b36 TTR job notes are two-way with the sheet’s Notes column — sheet notes populate the card, and adding a note appends it (dated) instead of overwriting. A notes icon on each job opens existing notes to read/add, or starts the first one.
 
-## Open — to pick up next (🤖 flagged first) (40)
-- 🤖 #1175 b130 make the nuke button searchfor the highest version file in the mcam folder change its name to mtasks.html  and replace it original mtasks.html and relaunch (Calendar)
-- 🤖 #1172 b129 is there a way for the claude button to direct it to the most recent chat? (Dev)
-- 🤖 #1171 b129 add a link to claude ai next to the copy button for the ai handoff. (Dev)
-- 🤖 #1170 b129 add a programming rules button here as well so we can note coding tips and ways we like to work together. in fact just have one notes button, when pushed changes to 4 radio buttons, a general note that will be ldisplayed on the home screen, a bug, a idea, a coding tip (Calendar)
-- 🤖 #1133 b98 make the deventry field collapsible, it only appears once the bulb or bug button has been pushed, and when you push enter it adds the instruction. after the text is entered it shows this visually with a sent message once its verified by reading it back. also when entering comments enter commits, this is for all text entry field in the program
-- 🤖 #106 the arrows in the invoice wil increment the cost $1 at a time, the box will be wider so 10000.00 is readable (TTR · )
-- 🤖 #1099 b69 make Sidebar icons bigger so there’s less empty space in each tile.
-- 🤖 #93 when click add job button in add job form the form doesnt take you back to the jobs tab (TTR · )
+## Open backlog — not yet flagged (40)
+- #1176 b132 AI handoff report now LEADS with a “🤖 NEXT TO FIX — Andrew flagged these for you” section containing only the items you 🤖-flagged, so they point at me as the task list for the round instead of being buried in the 40-item backlog. Added a “🧠 Coding tips” section too (how you like to work). The general open list is now “Open backlog — not yet flagged” and excludes the flagged ones (no duplication).
 - #1174 b130 when sending the mtasks download, put it in a mtasks folder, or do you have to zip it to do that? (Dev)
 - #1173 b130 note test (Dev)
 - #1171 b129 Enter now commits in every single-line text field across the app (the rest of #1133). Typing in a field and pressing Enter saves it (the field blurs, firing its save); inside a dialog Enter also clicks Save to confirm it; comment/reply prompts commit on Enter too. Multi-line textareas are left alone so you can still add line breaks. The capture bar keeps its own Enter-to-log behaviour.
@@ -107,11 +112,18 @@
 - #1106 b74 Invoice redesigned to match your real template: logo, right-aligned business block, Bill To, green-header Items table with Technician Services / Fault / Work carried out lines, Subtotal/Total, footer. Defaults pre-filled with your business details (no GST, INV-00041 numbering). Print/PDF matches. Tagline, zero-pad digits and show-logo toggle added to Invoice setup.
 - #1104 b73 Invoicing tab in TTR: 🧾 button beside each job (or + New invoice → pick a job) creates an invoice that pulls in the job details, logged time (as labour) and parts used. Editable line items, GST, footer notes, live totals, Print/PDF, and Draft/Sent/Due/Paid/Cancelled tracking with filters.
 - #1105 b73 Invoice setup page: TTR → Jobs → ⚙ → Invoice setup — business name, GST number/rate, hourly rate, prefix, next number, payment terms, bank details and default footer.
+- #1103 b72 Business expenses are clickable to edit: tap an expense on TTR → Expenses to change its name, amount, period, % business and notes (or delete it).
+- #1101 b71 Search now finds synced Job Tracker rows (e.g. “kieran”) — they weren’t searched before b70. Also added job notes, completed history (deduped) and budget rows.
+- #1102 b71 LATER: add filter chips / radio buttons to the search bar to narrow results by data type (jobs, tasks, inventory, parts, contacts…) or by status. For now search shows everything, typed and colour-coded.
+- #1100 b70 Universal search: the 🔍 bar (or press /) now searches tasks, areas, notes, shopping, calendar, parts & orders, jobs (in-app + on-sheet), assets, expenses, budget, markets, contacts, health/activities, fasts, food log, and the dev/bug-fix log. Results are typed and jump to the right page on click.
+- #104 make business expenses clickable to edit (TTR · Expenses)
+- #101 add a live job timer so i can time my sessions, this will be able to tagged to any job or task
+- #1092 b65 Verified: clicking Add job lands you on the Jobs list with the new job at the top (build 61), and the New job form is grouped Customer/Appliance/Appointment with roomier boxes (build 60). Tick the two add-job items to clear them.
 
 ## Recent build notes
+- b132 — Handoff points the flagged items at the AI. The report now leads with “🤖 NEXT TO FIX — Andrew flagged these for you” — only the items you tapped 🤖 on — so they read as the task list for this round instead of being sorted-first inside a 40-item backlog. A 🧠 Coding tips section was added (how you like to work). The remaining open items become “Open backlog — not yet flagged” and the flagged ones are no longer duplicated there. Flag with the 🤖 button on any entry; it goes straight to the top of the next handoff.
+- b131 — “Open Claude” on the handoff. Next to copy in the AI handoff URL box there’s now an Open Claude ↗ button — one tap copies the tokenized URL and opens your Claude chat list (newest first), so you paste it straight into the latest chat. #1171. (On #1172 — there’s no public URL that opens a specific most-recent conversation, so the chat list is the closest reliable target.)
 - b130 — One notes button, four kinds. The capture bar is now a single 📝 button — tap it and the field opens with four radio chips: 📝 Note, 🐞 Bug, 💡 Idea, 🧠 Coding tip (Note selected by default). Pick one, type, Enter to log with the read-back confirmation. General notes appear in a Notes card on Home; coding tips (and notes) also land in a new “Notes & coding tips” panel on the Dev page, tagged and kept out of the build pipeline so they don’t clutter the verify flow. Coding tips are for capturing how we like to work together. Implements #1170.
 - b129 — Enter commits everywhere. Finishing #1133: pressing Enter in any single-line text field across the app now commits it — the field saves (it blurs, firing its onchange save), and inside a dialog Enter also confirms by clicking Save. Comment/reply entry commits on Enter as well. Multi-line textareas are deliberately left alone so you can still type line breaks (use the Save button there). The capture bar keeps its own Enter-to-log. One global handler, so it covers existing and future fields.
 - b128 — Collapsible capture field with read-back. The pinned capture bar now shows only the 🐞 bug and 💡 idea buttons until you tap one — then the text field opens (focused, with a matching placeholder). Push Enter to log; the field collapses back and a read-back confirmation appears — “✓ #<id> logged: ‘your text’” — so you can see exactly what was captured and its entry id. Esc closes the field without logging. Implements #1133. (Making Enter commit on every text field across the app is a deliberate separate pass — flagged for a follow-up so it doesn’t break multi-line fields.)
 - b127 — Versioned builds & a real update button. Deploys are now versioned on disk as mtasks-<build>.html (old builds kept for rollback) instead of overwriting one file. The server serves the highest build number, read from inside each file (the VERSION line) — so it’s right even when the filename has a (1) suffix or a stray digit like mtasks3.html. The top-right Refresh button is now a real update button: it asks the server (new GET /version) whether a newer build exists and loads it if so, otherwise tells you you’re current — no longer just a blind browser reload. /deploy and ⚡ Deploy-newest both write/select by build number.
-- b126 — Deploy picker auto-renames. The 📥 Deploy-this-file picker now accepts any mtasks*.html or server*.py — mtasks3.html, mtasks(1).html, server(1).py all work — and writes them under the canonical name on the server, so you never rename a download by hand. It shows “→ deploys as mtasks.html” before you commit. Junk names are still refused and server.py is still compile-checked + auto-restarts. (The ⚡ Deploy-newest button already normalised names; the picker now matches it.)
-- b125 — Dev page tightened up. The four tool panels — Dev notes sync, GitHub, Deploy, AI handoff — now sit in a 50/50 two-column grid on desktop (deploy & github side by side, as asked in #1163) instead of four full-width stacks, reclaiming a lot of vertical space. Drops to a single column on mobile/tablet. The pipeline train-track is shorter too (trimmed height + padding). Build dropdown stays at the top of the notes. #1163, #1148, #1143.

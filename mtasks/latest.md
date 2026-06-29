@@ -1,14 +1,16 @@
 # Mtasks — AI handoff report
-1.2 · build 274 · generated 2026-06-29 · from web · last 2 builds (b273–b274) · since build 246 committed
+1.2 · build 275 · generated 2026-06-30 · from web · last 2 builds (b274–b275) · since build 246 committed
 
-## 🤖 NEXT TO FIX — Andrew flagged these for you (2)
+## 🤖 NEXT TO FIX — Andrew flagged these for you (4)
 These are the tasks to work on this round, highest priority first. Treat everything below as reference only — don’t pick up unflagged items unless they inform these.
+- 🤖 #1599 b275 when i tryed to open a link from the link tree, also have it open in a new tab, or new window if it cant be added as a tab to an existing mozilla session (Diet)
+- 🤖 #1597 b274 add food type "Meal" (Diet)
 - 🤖 #1596 b274 can we rejig command deck and vring it into mtasks as another sidebar tab, include a import from bookmark.html feature, that would have been exported from chrome or mozilla (Dev)
 - 🤖 #1271 b203 allow pasting of images or other file types into the dev tools entry field? is this evnen possible?, there will be a setting in main menu to switch between upload to the programs files store or to dev notes (Dev)
 
-## 🚀 Shipped — awaiting your verify (0)
+## 🚀 Shipped — awaiting your verify (1)
 The AI has reworked these. They need Andrew to tick ✓ to verify — or reply that it’s still broken, in which case the AI retries (read the 🔧/💬 notes).
-_none_
+- ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1598 b275 🚀 Build 275 — Command Deck & Life Review now run inside mtasks as their own sidebar tabs
 
 ## 🧠 Coding tips — how Andrew likes to work (15)
 - #1282 b210 add can of worms (Diet)
@@ -82,25 +84,9 @@ _none_
 - #1555 b247 5 (Dev)
 
 ## Recent build notes
+- b275 — Command Deck & Life Review now run inside mtasks as their own sidebar tabs
+  - Two new buttons sit on the left rail just under 📋 Stash: 🎛️ Command Deck (your workshop launcher) and 📓 Life Review (the daily/weekly/monthly review & analytics dashboard). They behave like any other tab — the main view switches to them, no new window or browser tab.
+  - Each page is a complete standalone app with its own styling, logic and storage, so it\u2019s hosted full-bleed in an in-app frame rather than merged into mtasks\u2019 code — that keeps the two engines from clashing. They load from launcher.html and life-review.html sitting next to mtasks.html, so they just work over Tailscale or the LAN.
 - b274 — Assign in-stock parts straight to a job — 🔧 to job pulls stock out of inventory and onto the job’s parts/invoice (#1591)
   - #1591: every in-stock row on the 📦 Inventory screen now has a 🔧 to job button. Pick a quantity and a job (open synced jobs + in-app jobs in the dropdown, or type any job number) and it creates a Used on job line on that job and removes the quantity from your on-hand stock.
   - The stock comes off oldest-ETA first, splitting a stock line if you only assign part of it; the assigned part carries its cost/sell so it flows into the job’s parts list and invoice totals.
-- b273 — New 🖥 Server tools pane in dev tools — build, status, update-from-GitHub, restart, deploy & command log in one place (#1279, #1558)
-  - #1279: a 🖥 Server tools panel now sits above Deploy on the Dev page. It shows the app vs server build, a live reachable indicator (with a warning when server.py lags the app), and one-tap 🔄 Check status · ⬆ Update from GitHub · ♻ Restart server · 📥 Deploy a file, plus the recent Deploy + GitHub command log.
-  - #1558: the ⬆ Update from GitHub button (git pull → auto-restart/reload if a newer build came down) is now surfaced right in that pane — it already existed in the GitHub panel and hits the server’s /git-update route.
-  - Honest scope: there’s deliberately no ⏻ start / stop — a running server can restart itself but can’t cleanly stop-and-stay-reachable or start when down. A true live server-stdout stream needs a new /log route (a later server build); for now the log is every command the app sends the server.
-
-## 🪵 Recent logs (deploy · handoff · git)
-Latest output, newest first — to help debug.
-
-### 🤝 AI handoff log
-- 9:53:41 pm ✓ https://raw.githubusercontent.com/lofty-nz/mtasks-handoff/main/mtasks/build-274-release-notes.md
-- 9:53:41 pm ✓ Paste this URL to the AI now — it expires in ~5 min:
-- 9:53:41 pm ✓ ✓ Release notes are live: mtasks/build-274-release-notes.md in the private repo.
-- 9:53:36 pm  Assembled report (58857 chars) — pushing to private repo…
-- 9:53:36 pm  🤝 Handing off (git push disabled) — sending report only…
-- 9:25:54 pm ✓ https://raw.githubusercontent.com/lofty-nz/mtasks-handoff/main/mtasks/build-274-release-notes.md
-- 9:25:54 pm ✓ Paste this URL to the AI now — it expires in ~5 min:
-- 9:25:54 pm ✓ ✓ Release notes are live: mtasks/build-274-release-notes.md in the private repo.
-- 9:25:49 pm  Assembled report (65979 chars) — pushing to private repo…
-- 9:25:49 pm  🤝 Handing off (git push disabled) — sending report only…

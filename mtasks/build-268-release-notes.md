@@ -11,7 +11,7 @@ These are the tasks to work on this round, highest priority first. Treat everyth
 - 🤖 #1272 b203 when we do food data, for coffee its a 26 pack but we only eat 1 or 2 at a time, so we need to have a total price divided by unit price in the dialog (Diet)
 - 🤖 #1279 b208 lets create a server tools pane in dev tools where you can see the current server build upload a new server file, start,stop, restart the server, current status and have a runing log of debug chatter/commnads being run (Dev)
 - 🤖 #1283 b210 add a review nutton to the sidebar, help me plan out a life review tab. it will have 3 tabs for today, and placeholder for tabs labeled week and month aswell (Diet)
-- 🤖 #1584 b267 mocha should be more like 50c for a sachet not 17.25, refer to screenshot with the prompt (Diet) — notes: the program will calculate the cost per serving from the use entered data, the user will only need to enter cost and qty per serve
+- 🤖 #1584 b267 mocha should be more like 50c for a sachet not 17.25, refer to screenshot with the prompt (Diet) — notes: the program will calculate the cost per serving from the use entered data, the user will only need to enter cost and qty per serve | nope still not working, remove entry field for price per user to the user, the program will calculate it from cost and pack size
 - 🤖 #1583 b267 add a tab in the settings for skins. default and matrix are the two option so far. remove the classic/matrix switcher button (Dev)
 - 🤖 #1275 b206 add a price per unit into the food data (Dev) — notes: it there but the logic is broke.
 - 🤖 #1301 b212 i want to share this app with a friend on mac, make any changes for mac enviroment, and add some mac install and setup instructions, this will including installing supporting software, then enitre process in a html in the help section, with check boxes as you go and a text entry field for every step to note problems etc, this can go a new install notes register pnae in dev notes (Diet)
@@ -22,7 +22,7 @@ These are the tasks to work on this round, highest priority first. Treat everyth
 
 ## 🚀 Shipped — awaiting your verify (1)
 The AI has reworked these. They need Andrew to tick ✓ to verify — or reply that it’s still broken, in which case the AI retries (read the 🔧/💬 notes).
-- ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1585 b268 🚀 Build 268 — Food price-per-unit fixed: logging a food now charges per-unit, not the pack price (#1584, #1275, #1272)
+- 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1585 b268 🚀 Build 268 — Food price-per-unit fixed: logging a food now charges per-unit, not the pack price (#1584, #1275, #1272)
 
 ## 🧠 Coding tips — how Andrew likes to work (15)
 - #1282 b210 add can of worms (Diet)

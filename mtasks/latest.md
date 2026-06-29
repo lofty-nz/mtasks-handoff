@@ -1,19 +1,20 @@
 # Mtasks — AI handoff report
-1.2 · build 270 · generated 2026-06-29 · from web · last 2 builds (b269–b270) · since build 246 committed
+1.2 · build 271 · generated 2026-06-29 · from web · last 2 builds (b270–b271) · since build 246 committed
 
-## 🤖 NEXT TO FIX — Andrew flagged these for you (7)
+## 🤖 NEXT TO FIX — Andrew flagged these for you (8)
 These are the tasks to work on this round, highest priority first. Treat everything below as reference only — don’t pick up unflagged items unless they inform these.
+- 🤖 #1591 b270 i should be able to click on an item in inventory and remove it from inventory and assign it to a jobs parts inventory/list/invoice (TTR · Inventory)
+- 🤖 #1590 b270 parts ordered entries should show when they are due" due in x days" (TTR · Inventory)
 - 🤖 #1586 b268 change the name of shipped to work in progress and change the rocket to a roadcone (like VLC). also hitting enter right now in this reply should send it but it doesnt it goes to new line (Dev)
 - 🤖 #1260 b192 if there are parts due it will show remaining days till delivery if that info is available, there will be an area to enter tracking number (TTR · Jobs)
 - 🤖 #1271 b203 allow pasting of images or other file types into the dev tools entry field? is this evnen possible?, there will be a setting in main menu to switch between upload to the programs files store or to dev notes (Dev)
 - 🤖 #1279 b208 lets create a server tools pane in dev tools where you can see the current server build upload a new server file, start,stop, restart the server, current status and have a runing log of debug chatter/commnads being run (Dev)
-- 🤖 #1283 b210 add a review nutton to the sidebar, help me plan out a life review tab. it will have 3 tabs for today, and placeholder for tabs labeled week and month aswell (Diet)
 - 🤖 #1558 b250 should we get the ascan for updates to goto github and pull the latest files and fallback to the downloads directory if nothing is found? but actually for now just have a pull a "update from github button (Dev)
 - 🤖 #1557 b250 we need to tidy up the folder theres scripts galore, they need to be in a subfolder,, the user data should have a folder, the old iterations should be copy to a seperate folder, (Dev)
 
-## 🚀 Shipped — awaiting your verify (0)
+## 🚀 Shipped — awaiting your verify (1)
 The AI has reworked these. They need Andrew to tick ✓ to verify — or reply that it’s still broken, in which case the AI retries (read the 🔧/💬 notes).
-_none_
+- ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1592 b271 🚀 Build 271 — Food cost-per-serve is now auto-calculated (no manual per-unit field) · pipeline rocket → 🚧 roadcone, stage reads “Work in progress” · removed the Skins hint text (#1584, #1586, #1589) — notes: create a w in progress for each ticket individually
 
 ## 🧠 Coding tips — how Andrew likes to work (15)
 - #1282 b210 add can of worms (Diet)
@@ -86,9 +87,10 @@ _none_
 - #1544 b244 tesss toilet wees timer will be integrated into the topped up water button the button will have a progress bar that updates with a range between 0 & 30 mins, that will be adjustable in the main settings menu. each page on the side bar will have its own tab in the setings menu (Other) — notes: Two parts shipped. (1) Wee timer is now on the 💧 Topped up water button. Tapping it tops up the bowl and starts a countdown that shows as a progress bar filling across the button (0 \\u2192 threshold). The label reads wee in M:SS and ticks live; when full it flips to Time for a wee 🚽 and pulses with a single beep. Take her out (either 💧 wee button, or the wee quick-log) to clear it. The threshold defaults to 30 min and is adjustable in Settings → 🐾 Tess → Wee reminder. (2) Settings is now tabbed, one tab per sidebar page \\u2014 a scrollable strip splits it into ⚙ General / 📅 Calendar / 🐾 Tess (where the wee setting lives) plus a placeholder tab for every other page. One honest note: I kept the existing food-driven 🚽 Toilet-timer panel rather than delete it \\u2014 you now have both a food→toilet timer and a water→wee timer. If you\\u2019d rather just the water one, say so and I\\u2019ll pull the old panel. And page settings that currently live behind an on-page \\u2699 (TTR, Markets) weren\\u2019t migrated into the tabs yet (bigger job) \\u2014 their tabs point you to the page gear for now.
 
 ## Recent build notes
+- b271 — Food cost-per-serve is now auto-calculated (no manual per-unit field) · pipeline rocket → 🚧 roadcone, stage reads “Work in progress” · removed the Skins hint text (#1584, #1586, #1589)
+  - #1584: the food editor no longer has a Price per unit field. You enter pack price + units / serves per pack, and the app shows a live read-only Cost per serve (price ÷ units) — that’s exactly what each log charges. Leave units blank for items sold singly and it logs the full price.
+  - #1586: the pipeline’s Shipped stage now actually shows on screen as 🚧 Work in progress — my earlier rename only touched the status badges, not the pipeline node itself (its icon/label are drawn separately), which is why you still saw the 🚀. Fixed at the source now.
+  - #1589: removed the “skin in Settings → 🎨 Skins” hint text from the pipeline controls row.
 - b270 — Home notes cap at 5 lines with show-more · new 🎨 Skins settings tab (Matrix/Classic moved off the pipeline) (#1587, #1583)
   - #1587: a long note on the Home Notes card is now capped at 5 lines with a ⌄ more / ⌃ less toggle. The toggle only appears when the text actually overflows.
   - #1583: new 🎨 Skins tab in Settings (after General) with Default and Matrix options for the pipeline. The old ▦ Matrix / ▢ Classic button on the pipeline is gone — the controls row now just points you to Settings → 🎨 Skins.
-- b269 — Matrix console now confined to the pipeline box · pipeline “Shipped” stage renamed “Work in progress” 🚧 (#1253, #1586)
-  - #1253: the Matrix deploy/restart console no longer takes over the whole screen — it now opens inside the pipeline’s area (the panel grows to fit it) and the pipeline returns when it’s done. It rides along if the Dev page re-renders mid-deploy, and re-anchors on scroll/resize, so the reboot view stays put.
-  - #1586: the pipeline’s Shipped stage is renamed Work in progress with a 🚧 road-cone icon (the status badge matches). Only the label/icon changed — the underlying status id is the same, so nothing in the workflow moves.

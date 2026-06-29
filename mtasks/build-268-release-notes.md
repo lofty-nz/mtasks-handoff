@@ -99,3 +99,19 @@ The AI has reworked these. They need Andrew to tick ✓ to verify — or reply t
 - b267 — ♻ Restart server button under Deploy file — restart the local server from the app (#1580)
   - Added a ♻ Restart server button right under 📥 Deploy file on the Dev pipeline. It saves your data, then asks the server to relaunch itself (so a freshly-dropped server.py takes effect) and reloads the page when it’s back — no terminal needed.
   - Needs server.py build 211 deployed. Added a /restart route that runs the existing self-healing restart (restart-mtasks.sh, detached). Until the server is on 211 the button will tell you the route is missing rather than fail silently.
+
+## 🪵 Recent logs (deploy · handoff · git)
+Latest output, newest first — to help debug.
+
+### 📥 Deploy log
+- 6:29:08 pm ✓ ✓ Deployed — refreshing to the new build on the Dev page…
+- 6:29:08 pm ✗ · git: commit failed
+- 6:29:08 pm ✓ · server.py: already current (newest is server.py)
+- 6:29:08 pm ✓ · mtasks.html: already current (from mtasks(1).html)
+- 6:29:08 pm  Scanning the server’s Downloads for the newest build…
+### 🤝 AI handoff log
+- 6:28:58 pm ✓ https://raw.githubusercontent.com/lofty-nz/mtasks-handoff/main/mtasks/build-268-release-notes.md
+- 6:28:58 pm ✓ Paste this URL to the AI now — it expires in ~5 min:
+- 6:28:58 pm ✓ ✓ Release notes are live: mtasks/build-268-release-notes.md in the private repo.
+- 6:28:53 pm  Assembled report (74359 chars) — pushing to private repo…
+- 6:28:53 pm  🤝 Handing off (git push disabled) — sending report only…

@@ -1,8 +1,9 @@
 # Mtasks — AI handoff report
 1.2 · build 274 · generated 2026-06-29 · from web · last 2 builds (b273–b274) · since build 246 committed
 
-## 🤖 NEXT TO FIX — Andrew flagged these for you (1)
+## 🤖 NEXT TO FIX — Andrew flagged these for you (2)
 These are the tasks to work on this round, highest priority first. Treat everything below as reference only — don’t pick up unflagged items unless they inform these.
+- 🤖 #1596 b274 can we rejig command deck and vring it into mtasks as another sidebar tab, include a import from bookmark.html feature, that would have been exported from chrome or mozilla (Dev)
 - 🤖 #1271 b203 allow pasting of images or other file types into the dev tools entry field? is this evnen possible?, there will be a setting in main menu to switch between upload to the programs files store or to dev notes (Dev)
 
 ## 🚀 Shipped — awaiting your verify (0)
@@ -93,6 +94,11 @@ _none_
 Latest output, newest first — to help debug.
 
 ### 🤝 AI handoff log
+- 9:53:41 pm ✓ https://raw.githubusercontent.com/lofty-nz/mtasks-handoff/main/mtasks/build-274-release-notes.md
+- 9:53:41 pm ✓ Paste this URL to the AI now — it expires in ~5 min:
+- 9:53:41 pm ✓ ✓ Release notes are live: mtasks/build-274-release-notes.md in the private repo.
+- 9:53:36 pm  Assembled report (58857 chars) — pushing to private repo…
+- 9:53:36 pm  🤝 Handing off (git push disabled) — sending report only…
 - 9:25:54 pm ✓ https://raw.githubusercontent.com/lofty-nz/mtasks-handoff/main/mtasks/build-274-release-notes.md
 - 9:25:54 pm ✓ Paste this URL to the AI now — it expires in ~5 min:
 - 9:25:54 pm ✓ ✓ Release notes are live: mtasks/build-274-release-notes.md in the private repo.

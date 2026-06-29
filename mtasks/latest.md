@@ -1,5 +1,5 @@
 # Mtasks — AI handoff report
-1.2 · build 269 · generated 2026-06-29 · from web · last 2 builds (b268–b269) · since build 246 committed
+1.2 · build 268 · generated 2026-06-29 · from web · last 2 builds (b267–b268) · since build 246 committed
 
 ## 🤖 NEXT TO FIX — Andrew flagged these for you (16)
 These are the tasks to work on this round, highest priority first. Treat everything below as reference only — don’t pick up unflagged items unless they inform these.
@@ -20,10 +20,9 @@ These are the tasks to work on this round, highest priority first. Treat everyth
 - 🤖 #1558 b250 should we get the ascan for updates to goto github and pull the latest files and fallback to the downloads directory if nothing is found? but actually for now just have a pull a "update from github button (Dev)
 - 🤖 #1557 b250 we need to tidy up the folder theres scripts galore, they need to be in a subfolder,, the user data should have a folder, the old iterations should be copy to a seperate folder, (Dev)
 
-## 🚀 Shipped — awaiting your verify (2)
+## 🚀 Shipped — awaiting your verify (1)
 The AI has reworked these. They need Andrew to tick ✓ to verify — or reply that it’s still broken, in which case the AI retries (read the 🔧/💬 notes).
 - 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1585 b268 🚀 Build 268 — Food price-per-unit fixed: logging a food now charges per-unit, not the pack price (#1584, #1275, #1272)
-- ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1588 b269 🚀 Build 269 — Matrix console now confined to the pipeline box · pipeline “Shipped” stage renamed “Work in progress” 🚧 (#1253, #1586)
 
 ## 🧠 Coding tips — how Andrew likes to work (15)
 - #1282 b210 add can of worms (Diet)
@@ -93,10 +92,26 @@ The AI has reworked these. They need Andrew to tick ✓ to verify — or reply t
 - #1537 b240 🚀 Build 240 — Postpone time blocks per day + day-calendar explained (#51 comment)
 
 ## Recent build notes
-- b269 — Matrix console now confined to the pipeline box · pipeline “Shipped” stage renamed “Work in progress” 🚧 (#1253, #1586)
-  - #1253: the Matrix deploy/restart console no longer takes over the whole screen — it now opens inside the pipeline’s area (the panel grows to fit it) and the pipeline returns when it’s done. It rides along if the Dev page re-renders mid-deploy, and re-anchors on scroll/resize, so the reboot view stays put.
-  - #1586: the pipeline’s Shipped stage is renamed Work in progress with a 🚧 road-cone icon (the status badge matches). Only the label/icon changed — the underlying status id is the same, so nothing in the workflow moves.
 - b268 — Food price-per-unit fixed: logging a food now charges per-unit, not the pack price (#1584, #1275, #1272)
   - Tapping a food chip to log it now charges its price per unit, not the whole pack price — so a Nescafe Mocha sachet logs at ~50c instead of $17.25 (#1584). The chip and its tooltip show the per-unit price (with the pack price in the tip).
   - The food ✎ editor now has a Units in the pack field — enter the pack price and the unit count (e.g. $17.25 ÷ 26) and the Price per unit auto-fills (still editable). That’s the value used when you log it (#1272, #1275).
   - Note: this fixes new logs. Your existing Nescafe Mocha Sachet · $17.25 entry was logged at the old price — set the food’s units (or per-unit price) on its ✎ card, then delete & re-tap the chip to log it correctly.
+- b267 — ♻ Restart server button under Deploy file — restart the local server from the app (#1580)
+  - Added a ♻ Restart server button right under 📥 Deploy file on the Dev pipeline. It saves your data, then asks the server to relaunch itself (so a freshly-dropped server.py takes effect) and reloads the page when it’s back — no terminal needed.
+  - Needs server.py build 211 deployed. Added a /restart route that runs the existing self-healing restart (restart-mtasks.sh, detached). Until the server is on 211 the button will tell you the route is missing rather than fail silently.
+
+## 🪵 Recent logs (deploy · handoff · git)
+Latest output, newest first — to help debug.
+
+### 📥 Deploy log
+- 6:29:08 pm ✓ ✓ Deployed — refreshing to the new build on the Dev page…
+- 6:29:08 pm ✗ · git: commit failed
+- 6:29:08 pm ✓ · server.py: already current (newest is server.py)
+- 6:29:08 pm ✓ · mtasks.html: already current (from mtasks(1).html)
+- 6:29:08 pm  Scanning the server’s Downloads for the newest build…
+### 🤝 AI handoff log
+- 6:28:58 pm ✓ https://raw.githubusercontent.com/lofty-nz/mtasks-handoff/main/mtasks/build-268-release-notes.md
+- 6:28:58 pm ✓ Paste this URL to the AI now — it expires in ~5 min:
+- 6:28:58 pm ✓ ✓ Release notes are live: mtasks/build-268-release-notes.md in the private repo.
+- 6:28:53 pm  Assembled report (74359 chars) — pushing to private repo…
+- 6:28:53 pm  🤝 Handing off (git push disabled) — sending report only…

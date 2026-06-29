@@ -1,8 +1,9 @@
 # Mtasks — AI handoff report
-1.2 · build 275 · generated 2026-06-30 · from web · last 2 builds (b274–b275) · since build 246 committed
+1.2 · build 276 · generated 2026-06-30 · from web · last 2 builds (b275–b276) · since build 246 committed
 
-## 🤖 NEXT TO FIX — Andrew flagged these for you (6)
+## 🤖 NEXT TO FIX — Andrew flagged these for you (7)
 These are the tasks to work on this round, highest priority first. Treat everything below as reference only — don’t pick up unflagged items unless they inform these.
+- 🤖 #1602 b275 we need to upgrade export source section so that it directs the ai to send back a script to do surgical edits to the html file from terminal. . we will add a check box beside include sources to toggle surgical response (Dev)
 - 🤖 #1601 b275 where is the link tree (Dev)
 - 🤖 #1600 b275 get silver prices live (Markets)
 - 🤖 #1599 b275 when i tryed to open a link from the link tree, also have it open in a new tab, or new window if it cant be added as a tab to an existing mozilla session (Diet)
@@ -10,9 +11,9 @@ These are the tasks to work on this round, highest priority first. Treat everyth
 - 🤖 #1596 b274 can we rejig command deck and vring it into mtasks as another sidebar tab, include a import from bookmark.html feature, that would have been exported from chrome or mozilla (Dev)
 - 🤖 #1271 b203 allow pasting of images or other file types into the dev tools entry field? is this evnen possible?, there will be a setting in main menu to switch between upload to the programs files store or to dev notes (Dev)
 
-## 🚀 Shipped — awaiting your verify (0)
+## 🚀 Shipped — awaiting your verify (1)
 The AI has reworked these. They need Andrew to tick ✓ to verify — or reply that it’s still broken, in which case the AI retries (read the 🔧/💬 notes).
-_none_
+- ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1603 b276 🚀 Build 276 — 🗄️ Data backups console on the Dev page — rolling snapshots of your data file, restore any point
 
 ## 🧠 Coding tips — how Andrew likes to work (15)
 - #1282 b210 add can of worms (Diet)
@@ -86,19 +87,10 @@ _none_
 - #1557 b250 we need to tidy up the folder theres scripts galore, they need to be in a subfolder,, the user data should have a folder, the old iterations should be copy to a seperate folder, (Dev)
 
 ## Recent build notes
+- b276 — 🗄️ Data backups console on the Dev page — rolling snapshots of your data file, restore any point
+  - A new 🗄️ Data backups panel sits under 🖥 Server tools. The server now snapshots your data file before each save (throttled to ~every 30 min, keeping the last 24 auto snapshots), so a bad write is always recoverable.
+  - From the panel you can 💾 Back up now (with an optional label), ↩ Restore any snapshot in place, 👁 preview what\u2019s inside it without restoring, ⬇ download it, 🗑 delete one, and 🧹 prune old auto snapshots. Manual backups are kept until you delete them.
+  - Restoring is itself undoable: the current data is snapshotted first (labelled \u201cpre restore\u201d) and an in-app Undo is also set up under Settings \u2192 Data. Needs server.py build 213 deployed (it adds the backup routes + carries the b211 /restart route).
 - b275 — Command Deck & Life Review now run inside mtasks as their own sidebar tabs
   - Two new buttons sit on the left rail just under 📋 Stash: 🎛️ Command Deck (your workshop launcher) and 📓 Life Review (the daily/weekly/monthly review & analytics dashboard). They behave like any other tab — the main view switches to them, no new window or browser tab.
   - Each page is a complete standalone app with its own styling, logic and storage, so it\u2019s hosted full-bleed in an in-app frame rather than merged into mtasks\u2019 code — that keeps the two engines from clashing. They load from launcher.html and life-review.html sitting next to mtasks.html, so they just work over Tailscale or the LAN.
-- b274 — Assign in-stock parts straight to a job — 🔧 to job pulls stock out of inventory and onto the job’s parts/invoice (#1591)
-  - #1591: every in-stock row on the 📦 Inventory screen now has a 🔧 to job button. Pick a quantity and a job (open synced jobs + in-app jobs in the dropdown, or type any job number) and it creates a Used on job line on that job and removes the quantity from your on-hand stock.
-  - The stock comes off oldest-ETA first, splitting a stock line if you only assign part of it; the assigned part carries its cost/sell so it flows into the job’s parts list and invoice totals.
-
-## 🪵 Recent logs (deploy · handoff · git)
-Latest output, newest first — to help debug.
-
-### 🤝 AI handoff log
-- 12:15:38 am ✓ https://raw.githubusercontent.com/lofty-nz/mtasks-handoff/main/mtasks/build-275-release-notes.md
-- 12:15:38 am ✓ Paste this URL to the AI now — it expires in ~5 min:
-- 12:15:38 am ✓ ✓ Release notes are live: mtasks/build-275-release-notes.md in the private repo.
-- 12:15:33 am  Assembled report (58956 chars) — pushing to private repo…
-- 12:15:33 am  🤝 Handing off (git push disabled) — sending report only…

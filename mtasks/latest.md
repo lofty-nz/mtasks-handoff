@@ -1,16 +1,18 @@
 # Mtasks — AI handoff report
 1.2 · build 275 · generated 2026-06-30 · from web · last 2 builds (b274–b275) · since build 246 committed
 
-## 🤖 NEXT TO FIX — Andrew flagged these for you (4)
+## 🤖 NEXT TO FIX — Andrew flagged these for you (6)
 These are the tasks to work on this round, highest priority first. Treat everything below as reference only — don’t pick up unflagged items unless they inform these.
+- 🤖 #1601 b275 where is the link tree (Dev)
+- 🤖 #1600 b275 get silver prices live (Markets)
 - 🤖 #1599 b275 when i tryed to open a link from the link tree, also have it open in a new tab, or new window if it cant be added as a tab to an existing mozilla session (Diet)
 - 🤖 #1597 b274 add food type "Meal" (Diet)
 - 🤖 #1596 b274 can we rejig command deck and vring it into mtasks as another sidebar tab, include a import from bookmark.html feature, that would have been exported from chrome or mozilla (Dev)
 - 🤖 #1271 b203 allow pasting of images or other file types into the dev tools entry field? is this evnen possible?, there will be a setting in main menu to switch between upload to the programs files store or to dev notes (Dev)
 
-## 🚀 Shipped — awaiting your verify (1)
+## 🚀 Shipped — awaiting your verify (0)
 The AI has reworked these. They need Andrew to tick ✓ to verify — or reply that it’s still broken, in which case the AI retries (read the 🔧/💬 notes).
-- ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1598 b275 🚀 Build 275 — Command Deck & Life Review now run inside mtasks as their own sidebar tabs
+_none_
 
 ## 🧠 Coding tips — how Andrew likes to work (15)
 - #1282 b210 add can of worms (Diet)
@@ -52,6 +54,7 @@ The AI has reworked these. They need Andrew to tick ✓ to verify — or reply t
 - #51 b242 add a postpone button to a task when you push it will bring a list between 30mins to 3days — notes: Added a ⏳ postpone row to the task pop-up (tap a task to open it) with quick offsets: +30m, +1h, +2h, +3h, Tomorrow, +2d, +3d. Postpone shifts the task to that new slot — from its existing scheduled time if it has one, otherwise from now — and nudges the due date along if it would fall behind. One tap re-slots it. | Added a ⏳ postpone row to the task pop-up (tap a task) with quick offsets: +30m, +1h, +2h, +3h, Tomorrow, +2d, +3d. Postpone re-slots the task to that new time — from its existing slot if it has one, else from now — and nudges the due date if it would fall behind. | this shoud be for any task anywhere, if it already has a calendar slot then it should have postpone button on the task itself | Per your steer: the ⏳ postpone is now a dedicated button on the task row itself (next to ✎), shown for any task that has a calendar slot — not just buried in the date chip or the pop-up. Tap it and you get the same quick offsets (+30m … +3d) to re-slot the task. (The day-view already had this; now the lists do too.) | when i click on the calendar item i dont see any option to postpone and bump it down the schedule, we will have a bumps counter too,\ | add the postpone button to the dialog inside the calendar items when clicked on from calendar view | I cant click on calendar objects like sleep/personal care, i need to be able to postpone them to because sometimes i dont goto bed on time. explain why the day calndar has 2 rows | Now covers your comment too: time blocks are postponable per day. Tap a calendar object (Sleep, self-care, etc.) on the Day view \u2014 the block modal now has a \u23f3 Postpone \u2014 just <date> row (+30m / +1h / +2h / +3h / +4h, with \u21ba reset). It shifts only that day (e.g. you went to bed late) and never touches the recurring time; a shifted block shows a \u23f3 on its bar and the time updates everywhere (incl. free-hours). Overnight blocks like Sleep carry the shift into the next morning correctly. Why the day calendar has 2 rows: the top lane is your non-negotiable time blocks (the routine \u2014 sleep, work, meals, self-care); the bottom lane is your scheduled tasks (dashed bars you can drag/tick/\u00d7). Two lanes so a task booked over a block reads clearly instead of overlapping it.
 
 ## Ideas realised since last commit (30)
+- #1598 b275 🚀 Build 275 — Command Deck & Life Review now run inside mtasks as their own sidebar tabs
 - #1595 b274 🚀 Build 274 — Assign in-stock parts straight to a job — 🔧 to job pulls stock out of inventory and onto the job’s parts/invoice (#1591)
 - #1594 b273 🚀 Build 273 — New 🖥 Server tools pane in dev tools — build, status, update-from-GitHub, restart, deploy & command log in one place (#1279, #1558)
 - #1593 b272 🚀 Build 272 — Parts on order now show “due in X days” + a tracking-number field on every order line (#1590, #1260)
@@ -81,7 +84,6 @@ The AI has reworked these. They need Andrew to tick ✓ to verify — or reply t
 - #1559 b250 test tag repair will have buisness spend and open jobs/tasks stacked sharing the header space (TTR · Home) — notes: the dev note will also sit at the top of the appropriate page to be checked off, if there is more tha one only show the 1st one, but have a next prev button
 - #1558 b250 should we get the ascan for updates to goto github and pull the latest files and fallback to the downloads directory if nothing is found? but actually for now just have a pull a "update from github button (Dev)
 - #1557 b250 we need to tidy up the folder theres scripts galore, they need to be in a subfolder,, the user data should have a folder, the old iterations should be copy to a seperate folder, (Dev)
-- #1555 b247 5 (Dev)
 
 ## Recent build notes
 - b275 — Command Deck & Life Review now run inside mtasks as their own sidebar tabs
@@ -90,3 +92,13 @@ The AI has reworked these. They need Andrew to tick ✓ to verify — or reply t
 - b274 — Assign in-stock parts straight to a job — 🔧 to job pulls stock out of inventory and onto the job’s parts/invoice (#1591)
   - #1591: every in-stock row on the 📦 Inventory screen now has a 🔧 to job button. Pick a quantity and a job (open synced jobs + in-app jobs in the dropdown, or type any job number) and it creates a Used on job line on that job and removes the quantity from your on-hand stock.
   - The stock comes off oldest-ETA first, splitting a stock line if you only assign part of it; the assigned part carries its cost/sell so it flows into the job’s parts list and invoice totals.
+
+## 🪵 Recent logs (deploy · handoff · git)
+Latest output, newest first — to help debug.
+
+### 🤝 AI handoff log
+- 12:15:38 am ✓ https://raw.githubusercontent.com/lofty-nz/mtasks-handoff/main/mtasks/build-275-release-notes.md
+- 12:15:38 am ✓ Paste this URL to the AI now — it expires in ~5 min:
+- 12:15:38 am ✓ ✓ Release notes are live: mtasks/build-275-release-notes.md in the private repo.
+- 12:15:33 am  Assembled report (58956 chars) — pushing to private repo…
+- 12:15:33 am  🤝 Handing off (git push disabled) — sending report only…

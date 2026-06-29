@@ -1,13 +1,17 @@
 # Mtasks — AI handoff report
-1.2 · build 267 · generated 2026-06-29 · from web · last 2 builds (b266–b267) · since build 246 committed
+1.2 · build 268 · generated 2026-06-29 · from web · last 2 builds (b267–b268) · since build 246 committed
 
-## 🤖 NEXT TO FIX — Andrew flagged these for you (12)
+## 🤖 NEXT TO FIX — Andrew flagged these for you (16)
 These are the tasks to work on this round, highest priority first. Treat everything below as reference only — don’t pick up unflagged items unless they inform these.
+- 🤖 #1253 b187 can we have it so the matrix console is confined to the area the pipeline usually takes up, and returnss to the pipeline after its done (Dev)
+- 🤖 #1587 b268 the note tile in home page when the text is really long it should be capped at 5 lines and have a button to show more (Personal)
+- 🤖 #1586 b268 change the name of shipped to work i n progress and have a icon of a roadcone (Dev)
+- 🤖 #1260 b192 if there are parts due it will show remaining days till delivery if that info is available, there will be an area to enter tracking number (TTR · Jobs)
 - 🤖 #1271 b203 allo pasting of images or other file types into here, there will be a setting in main menu to switch between upload to the programs files store or to dev notes (Dev)
 - 🤖 #1272 b203 when we do food data, for coffee its a 26 pack but we only eat 1 or 2 at a time, so we need to have a total price divided by unit price in the dialog (Diet)
 - 🤖 #1279 b208 lets create a server tools pane in dev tools where you can see the current server build upload a new server file, start,stop, restart the server, current status and have a runing log of debug chatter/commnads being run (Dev)
 - 🤖 #1283 b210 add a review nutton to the sidebar, help me plan out a life review tab. it will have 3 tabs for today, and placeholder for tabs labeled week and month aswell (Diet)
-- 🤖 #1584 b267 mocha should be more like 50c for a sachet not 17.25, refer to screenshot with the prompt (Diet)
+- 🤖 #1584 b267 mocha should be more like 50c for a sachet not 17.25, refer to screenshot with the prompt (Diet) — notes: the program will calculate the cost per serving from the use entered data, the user will only need to enter cost and qty per serve
 - 🤖 #1583 b267 add a tab in the settings for skins. default and matrix are the two option so far. remove the classic/matrix switcher button (Dev)
 - 🤖 #1275 b206 add a price per unit into the food data (Dev) — notes: it there but the logic is broke.
 - 🤖 #1301 b212 i want to share this app with a friend on mac, make any changes for mac enviroment, and add some mac install and setup instructions, this will including installing supporting software, then enitre process in a html in the help section, with check boxes as you go and a text entry field for every step to note problems etc, this can go a new install notes register pnae in dev notes (Diet)
@@ -16,23 +20,20 @@ These are the tasks to work on this round, highest priority first. Treat everyth
 - 🤖 #1558 b250 should we get the ascan for updates to goto github and pull the latest files and fallback to the downloads directory if nothing is found? but actually for now just have a pull a "update from github button (Dev)
 - 🤖 #1557 b250 we need to tidy up the folder theres scripts galore, they need to be in a subfolder,, the user data should have a folder, the old iterations should be copy to a seperate folder, (Dev)
 
-## 🚀 Shipped — awaiting your verify (0)
+## 🚀 Shipped — awaiting your verify (1)
 The AI has reworked these. They need Andrew to tick ✓ to verify — or reply that it’s still broken, in which case the AI retries (read the 🔧/💬 notes).
-_none_
+- ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1585 b268 🚀 Build 268 — Food price-per-unit fixed: logging a food now charges per-unit, not the pack price (#1584, #1275, #1272)
 
-## 🧠 Coding tips — how Andrew likes to work (18)
+## 🧠 Coding tips — how Andrew likes to work (15)
 - #1282 b210 add can of worms (Diet)
 - #1281 b210 verify ild 211 — deploy mtasks-211.html. Both in. Link a meal to an event. On the Diet page, the "Log a food" row now has a 🎉 link to an event field. As you type it suggests your upcoming dated items (so if Elena's birthday is on the calendar, it'll appear), but you can also just type it free-hand. So tonight: pick dinner, enter the cost/place, type/pick "Elena's birthday," and log it — the meal shows a 🎉 Elena's birthday badge in the day's list. If the text matches a real calendar item it also stores a link to it under the hood. Tested: the event saves on the entry and the badge renders. Settings toggle for action-needed items. Under Settings → Tasks & priority → "Show action-needed items" there's now a switch. Off hides the amber ⚡ banners that pin do-this items to the top of a page; on (default) keeps them. Verified the banner disappears when it's off and the toggle shows in settings. One honest caveat on the event picker: the suggestions currently include every dated task, not just social occasions — so business tasks like "Chase overdue invoice" show up in the list too, since the app has no separate "event" type to filter on. The free-text field means that doesn't get in your way (just type "Elena's birthday"), but if you'd like me to narrow the suggestions — say, only calendar appointments, or add a proper "event" flag you can mark birthdays with — that's a quick follow-up. And still queued whenever you're at the desktop: getting the server restarted onto build 200 (manual pkill + relaunch, then drop in restart-mtasks.sh), which also lights up the connection banner and makes the git-commit fix live. (Settings)
 - #1280 b209 add a water houseplants monitor feature (Calendar)
 - #1268 b203 run me thur the action path for upload source, deploy file from the pipeline pane and deploy from the top right does (Dev)
 - #1267 b202 Pushing the screenshot button in mobile mode should still work, the app should take you to the screen shot after so you can tag it r a project,asset,task,devnote etc (Dev)
 - #1265 b197 the comment follow the dismissed notes, they dont get deleted (Dev)
-- #1260 b192 if there are parts due it will show remaining days till delivery if that info is available, there will be an area to enter tracking number (TTR · Jobs)
 - #1256 b190 make the task/timer bit side side with do this next (Personal)
 - #1255 b188 what happens to that debugging module i had in the dev page! (Dev)
 - #1254 b188 we kind of need to have a stage between shipped and verfied, because shipped items that dont work yet or havent been verifed til the next stage need to go into an extra stage for holding/further attention. and the notes that pass go to verified. this way its possible to clear all the shipped flags in one sesision (Dev)
-- #1253 b187 can we have it so the matrix console is confined to the area the pipeline usually takes up, and returnss to the pipeline after its done (Dev)
-- #1250 b186 any items in orange marked for ai are to worked on next (Dev)
 - #1248 b186 devnotes are able to toggle how they are sorted, shipped items with the most comments are pinned to top, as they are more being tackled right now, more relevant than the others (Dev)
 - #1244 b183 timer? (Calendar)
 - #1243 b183 i cant find the job timer, there should be one on the home page and on the testtag repair page (Personal)
@@ -91,10 +92,10 @@ _none_
 - #1537 b240 🚀 Build 240 — Postpone time blocks per day + day-calendar explained (#51 comment)
 
 ## Recent build notes
+- b268 — Food price-per-unit fixed: logging a food now charges per-unit, not the pack price (#1584, #1275, #1272)
+  - Tapping a food chip to log it now charges its price per unit, not the whole pack price — so a Nescafe Mocha sachet logs at ~50c instead of $17.25 (#1584). The chip and its tooltip show the per-unit price (with the pack price in the tip).
+  - The food ✎ editor now has a Units in the pack field — enter the pack price and the unit count (e.g. $17.25 ÷ 26) and the Price per unit auto-fills (still editable). That’s the value used when you log it (#1272, #1275).
+  - Note: this fixes new logs. Your existing Nescafe Mocha Sachet · $17.25 entry was logged at the old price — set the food’s units (or per-unit price) on its ✎ card, then delete & re-tap the chip to log it correctly.
 - b267 — ♻ Restart server button under Deploy file — restart the local server from the app (#1580)
   - Added a ♻ Restart server button right under 📥 Deploy file on the Dev pipeline. It saves your data, then asks the server to relaunch itself (so a freshly-dropped server.py takes effect) and reloads the page when it’s back — no terminal needed.
   - Needs server.py build 211 deployed. Added a /restart route that runs the existing self-healing restart (restart-mtasks.sh, detached). Until the server is on 211 the button will tell you the route is missing rather than fail silently.
-- b266 — Dev-page tidy: title drops “concept prototype”, handoff checkbox renamed “include source”, icon-size slider moved to Settings (165% max) (#1274, #1276, #1286)
-  - Title bar no longer says “concept prototype” — it now reads Mtasks · build N · srv N (the release number was already there) (#1276).
-  - #1274: the AI-handoff 1st&nbsp;message checkbox is renamed include&nbsp;source (same function — bundles the rules + report + health + full source).
-  - #1276 / #1286: the pipeline icon-size slider moved off the Dev page into Settings → 🛠️ Dev, and its max is now 165% (was 240%). The pipeline already sits in a row between Scan-for-updates and AI&nbsp;Handoff, so no reposition was needed.

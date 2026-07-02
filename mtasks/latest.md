@@ -1,10 +1,12 @@
 # Mtasks — AI handoff report
-1.2 · build 295 · generated 2026-07-02 · from web · last 2 builds (b294–b295) · since build 246 committed
+1.2 · build 226 · generated 2026-07-03 · from web · last 2 builds (b225–b226) · since build 246 committed
 
-## 🤖 NEXT TO FIX — Andrew flagged these for you (2)
+## 🤖 NEXT TO FIX — Andrew flagged these for you (4)
 These are the tasks to work on this round, highest priority first. Treat everything below as reference only — don’t pick up unflagged items unless they inform these.
+- 🤖 #1663 b226 make the build and release list collapsible. show the different branch so it easy to navigate back to the main branch add more gut hub mgmt tools and more information so i can learn how to uise it as i go (Dev)
+- 🤖 #1662 b295 show 2 decimal paces in the version explorer for both arduino/flash box and matask. eg 21.45kb (Flashbox)
 - 🤖 #1661 b295 github upload stopped working (Dev)
-- 🤖 #1267 b202 Pushing the screenshot button in mobile mode should still work, the app should take you to the screen shot after so you can tag it r a project,asset,task,devnote etc (Dev)
+- 🤖 #1610 b283 wifi is causing lag - arduino
 
 ## 🚀 Shipped — awaiting your verify (15)
 The AI has reworked these. They need Andrew to tick ✓ to verify — or reply that it’s still broken, in which case the AI retries (read the 🔧/💬 notes).
@@ -12,9 +14,9 @@ The AI has reworked these. They need Andrew to tick ✓ to verify — or reply t
 - 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1655 b293 eventually there will be so many foods that we will need to hide items to keep the screen usable, so there will be another foodtype called hidden. in side hidden there will be all the other food types. this wil be an overflow so we only keep the stuff we have most frequent in the view (Diet) — notes: Added a 🙈 Hidden food type. Set a food’s type to Hidden (on its ✎ edit card) and it drops out of the normal categories into a collapsed “Hidden” overflow bucket at the bottom of Your foods — tap it to expand. Keeps the frequently-used foods in view and tucks the rest away. | Added a ������ Hidden food type. Set a food’s type to Hidden (on its ✎ edit card) and it drops out of the normal categories into a collapsed “Hidden” overflow bucket at the bottom of Your foods — tap it to expand. Keeps the frequently-used foods in view and tucks the rest away.
 - 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1645 b292 a note of a link in a job i made is not clickable, if there are any links in user data, the user must be able to click to open in new window, and the link changes font colour to blue aswell (TTR · Jobs) — notes: Links in job notes are now clickable. The main job dialog shows notes in an editable box (which can’t hold links), so it now also shows a read-only preview above it with any links live and blue — tap to open in a new tab. Also see #1646/#1647: bare links (no https://) are now detected too.
 - 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1641 b290 hovering over any links throughout the app whether it be nested in notes or tasks or anywhere in the app should be clickable to open in new window (TTR · Jobs) — notes: URLs are now clickable throughout the app: any http(s) link in notes, job notes, voice-note text and dev notes renders as a link that opens in a new tab. (Applied to read-only text views, not while you’re editing in a field.)
-- 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1640 b290 when we click delete job it should remove the entry drom the database entirely, add a are you sure confirmation dialog (TTR · Jobs) — notes: Delete now uses a reliable in-app “Are you sure?” dialog instead of the browser’s native confirm (which can be silently suppressed in the installed PWA — the likely reason it seemed to do nothing). Both in-app jobs and sheet jobs remove the entry from your data on confirm. | i just tryed to delete a job and it didnt remove it from the list. also when you delete a job that is a signal to close the job details dialog. | theres a dialog for it but it doesnt actually delete the job, maybe it needs to delete from job tracker as well and a suncying isue is bringing it back instantly?
+- 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1640 b290 when we click delete job it should remove the entry drom the database entirely, add a are you sure confirmation dialog (TTR · Jobs) — notes: Delete now uses a reliable in-app “Are you sure?” dialog instead of the browser’s native confirm (which can be silently suppressed in the installed PWA — the likely reason it seemed to do nothing). Both in-app jobs and sheet jobs remove the entry from your data on confirm. | i just tryed to delete a job and it didnt remove it from the list. also when you delete a job that is a signal to close the job details dialog. | theres a dialog for it but it doesnt actually delete the job, maybe it needs to delete from job tracker as well and a suncying isue is bringing it back instantly? | Delete now actually removes the job — and survives a sheet re-sync. Two faults: (1) a sheet-job delete did nothing unless the Apps Script write-back was set up, and (2) even when it ran, ttrSync rebuilds the whole job list from the sheet ~600ms later, so the row came straight back. Now, on confirm: the job is removed from your list immediately and the details dialog closes (write-back or not); the job number is tombstoned in settings so the next sync can't resurrect it; and if write-back IS set it still best-effort deletes the sheet row too. New job numbers also skip tombstoned numbers so a deleted one isn't reused.
 - 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1638 b290 the food types list should show all food type categories as they are added. the most popular foods will apears at the top of each category. when food or non food item is consumed log it with a date and timestamp, and only display todays food consumption in the logged today list (Diet) — notes: Every food you log is now stamped with a time, shown on the logged rows. Note: the other parts you asked for were already in place in build 291 — the “Your foods” list already groups by category and already floats the most-eaten foods to the top of each, and the logged list already shows only the selected day. If you meant a separate categories screen, tell me and I’ll build that.
-- 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1634 b290 when its compiling show that in the serial monitor viewer, and add a version picker and flash button to thje top beside connect/clear/copy etc (Flashbox) — notes: The Matrix serial monitor now has a revision picker + 🔌 Flash right in its top bar, beside Connect / Clear / Copy — pick a stored .ino build and flash it without scrolling down to the tree. While the flash runs the console shows ⏳ compiling + uploading on the desktop… and the status dot reads ⏳ FLASHING; the monitor auto-reconnects afterwards to catch the boot log. | any time a flash is performed goto that matrix serial monitor
+- 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1634 b290 when its compiling show that in the serial monitor viewer, and add a version picker and flash button to thje top beside connect/clear/copy etc (Flashbox) — notes: The Matrix serial monitor now has a revision picker + 🔌 Flash right in its top bar, beside Connect / Clear / Copy — pick a stored .ino build and flash it without scrolling down to the tree. While the flash runs the console shows ⏳ compiling + uploading on the desktop… and the status dot reads ⏳ FLASHING; the monitor auto-reconnects afterwards to catch the boot log. | any time a flash is performed goto that matrix serial monitor | flashing build 1 → /dev/ttyACM0 … compiling + uploading on the desktop (can take ~30–90s) <<<<<<this should go in the matrix serial monitor, not at the bottom of the flashbox page
 - ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1602 b275 we need to upgrade export source section so that it directs the ai to send back a script to do surgical edits to the html file from terminal. . we will add a check box beside include sources to toggle surgical response (Dev) — notes: New ⚙ Surgical response toggle in the 🤝 AI-handoff picker (under 🩺 Bundle sections, off by default). When ticked, the 1st-message bundle instructs the AI to reply with one self-contained terminal patch script \u2014 Python stdlib, exact unique string replacements, backs up to data backup/ first, bumps VERSION + prepends the BUILDS note, validates with node --check / py_compile and rolls back on failure \u2014 instead of returning the whole ~1.25 MB file. Preview it via 👁 Preview the 1st-message bundle.
 - ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1644 b292 🚀 Build 292 — 8 flagged fixes: wide job dialog, notes order, clickable links, safe delete, food theme + timestamps, markets reorder, perf benchmark
 - ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1637 b291 🚀 Build 291 — 📟 FlashBox page: collapsible version explorer, per-revision 🐞, flash from the serial bar
@@ -53,6 +55,8 @@ The AI has reworked these. They need Andrew to tick ✓ to verify — or reply t
 - #1632 b290 condense the info on the arduino page, make the code entry field small but resizable, (Flashbox) — notes: FlashBox page condensed: the two explainer paragraphs are trimmed to one-liners and the paste box is now a small, resizable field (3 rows, drag the corner to grow) instead of a tall fixed textarea.
 - #1630 b290 test pic paste (Dev)
 - #1628 b289 limit the arduino terminal to 10 lines, have it scrollable (Flashbox) — notes: The serial console (the Matrix terminal) is now capped at ~10 lines tall and scrolls instead of growing down the page. Full history is kept — scroll up inside the box to read back.
+- #1618 b287 arduino not flashing
+- #1611 b283 add a place to upload latest sketch, or paste in a sketch, rename it give it a new version number, and have it accesible inside the project page. track the files with a tree explorer,. have links to download the revisions,
 - #1590 b270 parts ordered entries should show when they are due" due in x days" (TTR · Inventory)
 - #1587 b268 the note tile in home page when the text is really long it should be capped at 5 lines and have a button to show more (Personal)
 - #1584 b267 mocha should be more like 50c for a sachet not 17.25, refer to screenshot with the prompt (Diet) — notes: the program will calculate the cost per serving from the use entered data, the user will only need to enter cost and qty per serve | nope still not working, remove entry field for price per user to the user, the program will calculate it from cost and pack size
@@ -69,8 +73,6 @@ The AI has reworked these. They need Andrew to tick ✓ to verify — or reply t
 - #1528 b232 the ai handoff report with everything unchecked still contains the source. it should contain nothing but the current version info. also we needs to add checkboxes for the dev info that is contained in dev panes, eg system health, configuration and debugging info (Dev)
 - #1525 b230 have button to turn dev notes and coding tips into bug/ideas/verfied (Dev)
 - #1304 b216 the upload source button - it takes about 5 see to upload & reboot the server, have a progress bar in the matrix terminal, and change the button to a small one, instead of upload source call it "scan for updates", (Dev) — notes: Done: the big Upload Source button is now a small 🔍 Scan for updates button, and the Matrix terminal shows a live green progress bar that fills over the ~5s upload & reboot (then the page reloads onto the new build, or the 8s fallback closes it). Same action under the hood (scans your Downloads for the newest build, deploys, restarts). I did not build the older \u201cscan \u2192 list found files \u2192 tick before update\u201d flow \u2014 the 📥 Deploy file picker beside it already does manual file selection. Want that scan-then-select list as well? Say so and I\u2019ll add it.
-- #1286 b212 put the icon size slider in the program settings move the pipeline up in row with aihandover and upload source (Dev)
-- #1276 b207 put the piepline in the middle of the upload source and handoff buttons, set 165% as the max size, and move the slider to the settings menu., also  put the release number in the title bar, and remove " conceot protypre (Dev)
 
 ## Ideas realised since last commit (30)
 - #1660 b296 🚀 Build 296 — Service worker removed — a bad build can no longer wedge the launcher
@@ -89,6 +91,7 @@ The AI has reworked these. They need Andrew to tick ✓ to verify — or reply t
 - #1625 b287 add abilty edit notes, filenames etc to the arduino section (Flashbox) — notes: You can now edit the FlashBox sketch store in place. Each sketch group has an ✎ to rename it (for a header that also sets the filename it stages under so #include resolves), and every revision has an ✎ to edit its version label and note. Needs server.py build 223.
 - #1624 b287 🚀 Build 287 — 🖥 Live serial monitor (pause · clear · copy) + fix the CDC FQBN
 - #1622 b286 🚀 Build 286 — 🔌 Flash: free a busy port, USB-CDC toggle, built-in serial monitor + collapsible lists
+- #1613 b283 collapsible dev tools lists and tasks in all projects
 - #1609 b282 🚀 Build 282 — 🛠️ FlashBox dev console — a scoped dev-notes + pipeline page inside the FlashBox project
 - #1608 b281 🚀 Build 281 — Phone 404 fixed: the home-screen icon no longer launches a build-specific URL (#1608)
 - #1607 b280 🚀 Build 280 — Silver/metals retry: fall back to a server-side price fetch when the browser is blocked (#1600) (Markets)
@@ -102,55 +105,28 @@ The AI has reworked these. They need Andrew to tick ✓ to verify — or reply t
 - #1595 b274 🚀 Build 274 — Assign in-stock parts straight to a job — 🔧 to job pulls stock out of inventory and onto the job’s parts/invoice (#1591)
 - #1594 b273 🚀 Build 273 — New 🖥 Server tools pane in dev tools — build, status, update-from-GitHub, restart, deploy & command log in one place (#1279, #1558)
 - #1593 b272 🚀 Build 272 — Parts on order now show “due in X days” + a tracking-number field on every order line (#1590, #1260)
-- #1592 b271 🚀 Build 271 — Food cost-per-serve is now auto-calculated (no manual per-unit field) · pipeline rocket → 🚧 roadcone, stage reads “Work in progress” · removed the Skins hint text (#1584, #1586, #1589) — notes: create a w in progress for each ticket individually
 
 ## Recent build notes
-- b295 — 💬 Message to AI box on the Dev pipeline — type a note, it logs as a 💡 idea + flags for handoff
-  - New 💬 Message to AI button beside 🤝 AI Handoff on the Dev pipeline. Tap it and a Matrix-style entry box takes over the pipeline area (same takeover the deploy terminal uses); type a message, Enter or 📨 Send (Shift+Enter for a newline, Esc to cancel).
-  - Sending logs it as a 💡 idea in the dev entries — auto-flagged 🤖 for the next handoff (honours auto-flag on log), scope-aware (FlashBox console keeps it on its own track), read-back confirmation “message sent”, then it closes back to the pipeline.
-- b294 — Dev-list links clickable (properly), edit replies, non-food theme, Hidden foods, ❄️ zoom (#1639,#1649,#1653,#1655,#1656,#1657)
-  - #1656 — dev-note links, fixed at the source. The main Dev-notes list was still plain text (the earlier fix only touched two secondary views). Every dev-note display now linkifies, so www.link.com and bare domains are clickable and blue. Edit boxes stay plain.
-  - #1649 — edit replies. Each reply now has an ✎ button that opens an edit box.
-  - #1657 — non-food intake input themed (no longer stark white).
-  - #1655 — 🙈 Hidden food type. Set a food to Hidden and it moves into a collapsed overflow bucket at the bottom of Your foods, keeping frequent foods in view.
-  - #1653 — ❄️ zoom button in the top-right toolbar: cycles the app 100% → 110% → 125%, saved.
+- b226 — Clearer errors when the server is older than the feature needs
+  - Send to dev team, User submissions, and Fork branch now detect when the server doesn’t have the endpoint (an HTTP 404 from an older server.py) and say “is the server on build 204?” instead of a bare “failed.” If the send still fails after deploying server 204, the message passes through the real reason (e.g. the mtasks-feedback repo not existing or not being public).
+- b225 — 🌿 Fork branch — start a new git branch from the GitHub panel
+  - New 🌿 Fork branch button in the 🐙 GitHub panel header. Name a branch and it creates it off your current state and switches to it — non-destructive: any uncommitted changes come along, master is untouched, history isn’t rewritten. It also pushes the branch to GitHub (-u) so it’s real and your normal Commit & push works on it. Needs server build 204 for the new /git-branch endpoint.
 
 ## 🪵 Recent logs (deploy · handoff · git)
 Latest output, newest first — to help debug.
 
 ### 🐙 GitHub log
-- 10:13:47 pm ✗ ✗ On branch tidy-folder-1557
-Changes not staged for commit:
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   README.md
-	deleted:    archive/server/server_b208.py
-	deleted:    host.py
-	deleted:    mtasksjun2410pm.html
-	deleted:    nuke.sh
-	deleted:    server_b201.py
-	deleted:    server_b202.py
-	deleted:    server_b209.py
-	deleted:    server_b215.py
-	deleted:    server_b216.py
+- 11:58:46 pm ✗ ✗ On branch master
+Your branch is up to date with 'origin/master'.
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	Exort/
-	bookmarks-clean.html
-	dashboard-shortcuts.json
-	finish-tidy.sh
-	heal.sh
-	launcher.html
-	life-review.html
-	mtasks-csv/
-	mtasks-server.log
-	mtasks-to-csv.py
-	mtasks.code-workspace
-	restart-mtasks.sh
-	selftest.py
-	server_b208.py
-	server_b209maybe bad.py
+	archive/
 
-no changes added to commit (use "git add" and/or "git commit -a")
-- 10:13:47 pm  Pushing build 295…
+nothing added to commit but untracked files present (use "git add" to track)
+- 11:58:46 pm  Pushing build 226…
+- 11:58:33 pm ✓ ✓ Pushed & committed build 226
+- 11:58:33 pm  · tag b226 already exists
+- 11:58:33 pm  · updated .gitignore
+- 11:58:31 pm  Pushing build 226…

@@ -1,21 +1,21 @@
 # Mtasks — AI handoff report
-1.2 · build 296 · generated 2026-07-02 · from web · last 2 builds (b295–b296) · since build 246 committed
+1.2 · build 295 · generated 2026-07-02 · from web · last 2 builds (b294–b295) · since build 246 committed
 
-## 🤖 NEXT TO FIX — Andrew flagged these for you (1)
+## 🤖 NEXT TO FIX — Andrew flagged these for you (2)
 These are the tasks to work on this round, highest priority first. Treat everything below as reference only — don’t pick up unflagged items unless they inform these.
+- 🤖 #1661 b295 github upload stopped working (Dev)
 - 🤖 #1267 b202 Pushing the screenshot button in mobile mode should still work, the app should take you to the screen shot after so you can tag it r a project,asset,task,devnote etc (Dev)
 
-## 🚀 Shipped — awaiting your verify (16)
+## 🚀 Shipped — awaiting your verify (15)
 The AI has reworked these. They need Andrew to tick ✓ to verify — or reply that it’s still broken, in which case the AI retries (read the 🔧/💬 notes).
 - 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1656 b293 www.link.com (Dev) — notes: Fixed properly this time. The main Dev-notes list was still using plain text (my earlier link fix only reached two secondary views), so links there stayed unclickable. Every dev-note display now linkifies — www.link.com and bare domains are clickable and blue. (The two edit boxes stay plain text so editing isn’t disrupted.) | even the link in your reply should be clickable
-- 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1655 b293 eventually there will be so many foods that we will need to hide items to keep the screen usable, so there will be another foodtype called hidden. in side hidden there will be all the other food types. this wil be an overflow so we only keep the stuff we have most frequent in the view (Diet) — notes: Added a 🙈 Hidden food type. Set a food’s type to Hidden (on its ✎ edit card) and it drops out of the normal categories into a collapsed “Hidden” overflow bucket at the bottom of Your foods — tap it to expand. Keeps the frequently-used foods in view and tucks the rest away.
+- 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1655 b293 eventually there will be so many foods that we will need to hide items to keep the screen usable, so there will be another foodtype called hidden. in side hidden there will be all the other food types. this wil be an overflow so we only keep the stuff we have most frequent in the view (Diet) — notes: Added a 🙈 Hidden food type. Set a food’s type to Hidden (on its ✎ edit card) and it drops out of the normal categories into a collapsed “Hidden” overflow bucket at the bottom of Your foods — tap it to expand. Keeps the frequently-used foods in view and tucks the rest away. | Added a ������ Hidden food type. Set a food’s type to Hidden (on its ✎ edit card) and it drops out of the normal categories into a collapsed “Hidden” overflow bucket at the bottom of Your foods — tap it to expand. Keeps the frequently-used foods in view and tucks the rest away.
 - 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1645 b292 a note of a link in a job i made is not clickable, if there are any links in user data, the user must be able to click to open in new window, and the link changes font colour to blue aswell (TTR · Jobs) — notes: Links in job notes are now clickable. The main job dialog shows notes in an editable box (which can’t hold links), so it now also shows a read-only preview above it with any links live and blue — tap to open in a new tab. Also see #1646/#1647: bare links (no https://) are now detected too.
 - 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1641 b290 hovering over any links throughout the app whether it be nested in notes or tasks or anywhere in the app should be clickable to open in new window (TTR · Jobs) — notes: URLs are now clickable throughout the app: any http(s) link in notes, job notes, voice-note text and dev notes renders as a link that opens in a new tab. (Applied to read-only text views, not while you’re editing in a field.)
 - 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1640 b290 when we click delete job it should remove the entry drom the database entirely, add a are you sure confirmation dialog (TTR · Jobs) — notes: Delete now uses a reliable in-app “Are you sure?” dialog instead of the browser’s native confirm (which can be silently suppressed in the installed PWA — the likely reason it seemed to do nothing). Both in-app jobs and sheet jobs remove the entry from your data on confirm. | i just tryed to delete a job and it didnt remove it from the list. also when you delete a job that is a signal to close the job details dialog. | theres a dialog for it but it doesnt actually delete the job, maybe it needs to delete from job tracker as well and a suncying isue is bringing it back instantly?
 - 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1638 b290 the food types list should show all food type categories as they are added. the most popular foods will apears at the top of each category. when food or non food item is consumed log it with a date and timestamp, and only display todays food consumption in the logged today list (Diet) — notes: Every food you log is now stamped with a time, shown on the logged rows. Note: the other parts you asked for were already in place in build 291 — the “Your foods” list already groups by category and already floats the most-eaten foods to the top of each, and the logged list already shows only the selected day. If you meant a separate categories screen, tell me and I’ll build that.
 - 🤖 ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1634 b290 when its compiling show that in the serial monitor viewer, and add a version picker and flash button to thje top beside connect/clear/copy etc (Flashbox) — notes: The Matrix serial monitor now has a revision picker + 🔌 Flash right in its top bar, beside Connect / Clear / Copy — pick a stored .ino build and flash it without scrolling down to the tree. While the flash runs the console shows ⏳ compiling + uploading on the desktop… and the status dot reads ⏳ FLASHING; the monitor auto-reconnects afterwards to catch the boot log. | any time a flash is performed goto that matrix serial monitor
 - ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1602 b275 we need to upgrade export source section so that it directs the ai to send back a script to do surgical edits to the html file from terminal. . we will add a check box beside include sources to toggle surgical response (Dev) — notes: New ⚙ Surgical response toggle in the 🤝 AI-handoff picker (under 🩺 Bundle sections, off by default). When ticked, the 1st-message bundle instructs the AI to reply with one self-contained terminal patch script \u2014 Python stdlib, exact unique string replacements, backs up to data backup/ first, bumps VERSION + prepends the BUILDS note, validates with node --check / py_compile and rolls back on failure \u2014 instead of returning the whole ~1.25 MB file. Preview it via 👁 Preview the 1st-message bundle.
-- ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1658 b294 🚀 Build 294 — Dev-list links clickable (properly), edit replies, non-food theme, Hidden foods, ❄️ zoom (#1639,#1649,#1653,#1655,#1656,#1657)
 - ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1644 b292 🚀 Build 292 — 8 flagged fixes: wide job dialog, notes order, clickable links, safe delete, food theme + timestamps, markets reorder, perf benchmark
 - ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1637 b291 🚀 Build 291 — 📟 FlashBox page: collapsible version explorer, per-revision 🐞, flash from the serial bar
 - ↩ SHIPPED (awaiting verify — if the notes say it’s still broken, retry; otherwise it just needs the user to confirm) #1619 b285 🚀 Build 285 — 🔌 Flash now gathers companion files — multi-file sketches (e.g. a .ino that #includes logo.h) compile
@@ -75,6 +75,7 @@ The AI has reworked these. They need Andrew to tick ✓ to verify — or reply t
 ## Ideas realised since last commit (30)
 - #1660 b296 🚀 Build 296 — Service worker removed — a bad build can no longer wedge the launcher
 - #1659 b295 🚀 Build 295 — Repackage of 294 — mis-encoded release-note byte repaired
+- #1658 b294 🚀 Build 294 — Dev-list links clickable (properly), edit replies, non-food theme, Hidden foods, ❄️ zoom (#1639,#1649,#1653,#1655,#1656,#1657)
 - #1653 b293 we are going to put a snowflake in the top right buttons, when clicked the program zooms in (Markets) — notes: Added a ❄️ zoom button to the top-right toolbar. Tapping it cycles the whole app 100% → 110% → 125% → 100%; the choice is saved.
 - #1650 b293 🚀 Build 293 — Clickable bare links + blue link styling, job-note links, delete a food (#1645–#1648)
 - #1648 b292 add a delete button inside the edit food dialog. when you click it it pops up a are you sure dialog, and if you click delete, the food item is deleted and the dialog closes (Diet) — notes: The food edit dialog (✎ on a food chip) now has a ������ Delete button. It asks “Are you sure?”, and on confirm deletes the food and its logged entries, then closes the dialog.
@@ -102,23 +103,54 @@ The AI has reworked these. They need Andrew to tick ✓ to verify — or reply t
 - #1594 b273 🚀 Build 273 — New 🖥 Server tools pane in dev tools — build, status, update-from-GitHub, restart, deploy & command log in one place (#1279, #1558)
 - #1593 b272 🚀 Build 272 — Parts on order now show “due in X days” + a tracking-number field on every order line (#1590, #1260)
 - #1592 b271 🚀 Build 271 — Food cost-per-serve is now auto-calculated (no manual per-unit field) · pipeline rocket → 🚧 roadcone, stage reads “Work in progress” · removed the Skins hint text (#1584, #1586, #1589) — notes: create a w in progress for each ticket individually
-- #1591 b270 i should be able to click on an item in inventory and remove it from inventory and assign it to a jobs parts inventory/list/invoice (TTR · Inventory)
 
 ## Recent build notes
-- b296 — Service worker removed — a bad build can no longer wedge the launcher
-  - Permanent fix for the launcher-cache incident. Mtasks is only ever served from localhost or Tailscale, so offline service-worker caching bought almost nothing — but it once cost a real outage: a mis-encoded byte in a build-294 release note produced a blank app, and that broken copy got stored in the Mint Web App’s private service-worker cache and kept replaying even after the server was fixed. A Firefox reinstall couldn’t shift it because the wedge lived in the web app’s isolated profile, not in the browser program.
-  - The app now registers no service worker at all, and on every boot it actively unregisters any worker a previous build left behind and purges all cache storage (new killServiceWorkers(), called first thing in boot()). Once b296 loads a single time the launcher self-heals, and from then on it can never store-and-replay a stale build — it always shows whatever the server currently serves.
-  - The post-deploy hard reload (hardReloadApp) now unregisters the worker instead of only re-checking it, matching the no-SW policy. Server unchanged: it already sends Cache-Control: no-store on every response and serves the highest build on disk.
-- b295 — Repackage of 294 — mis-encoded release-note byte repaired
-  - Build 294 shipped with one emoji written in the wrong text encoding, leaving a few invalid bytes mid-file. A browser that hits bytes it can’t decode abandons the whole file, so 294 loaded as a blank app rather than running badly. 295 is the same app with the encoding repaired — it passes the syntax check and loads normally in a plain tab. No feature changes. (Build 296 is the durable fix that stops any bad build from wedging the launcher in the first place.)
+- b295 — 💬 Message to AI box on the Dev pipeline — type a note, it logs as a 💡 idea + flags for handoff
+  - New 💬 Message to AI button beside 🤝 AI Handoff on the Dev pipeline. Tap it and a Matrix-style entry box takes over the pipeline area (same takeover the deploy terminal uses); type a message, Enter or 📨 Send (Shift+Enter for a newline, Esc to cancel).
+  - Sending logs it as a 💡 idea in the dev entries — auto-flagged 🤖 for the next handoff (honours auto-flag on log), scope-aware (FlashBox console keeps it on its own track), read-back confirmation “message sent”, then it closes back to the pipeline.
+- b294 — Dev-list links clickable (properly), edit replies, non-food theme, Hidden foods, ❄️ zoom (#1639,#1649,#1653,#1655,#1656,#1657)
+  - #1656 — dev-note links, fixed at the source. The main Dev-notes list was still plain text (the earlier fix only touched two secondary views). Every dev-note display now linkifies, so www.link.com and bare domains are clickable and blue. Edit boxes stay plain.
+  - #1649 — edit replies. Each reply now has an ✎ button that opens an edit box.
+  - #1657 — non-food intake input themed (no longer stark white).
+  - #1655 — 🙈 Hidden food type. Set a food to Hidden and it moves into a collapsed overflow bucket at the bottom of Your foods, keeping frequent foods in view.
+  - #1653 — ❄️ zoom button in the top-right toolbar: cycles the app 100% → 110% → 125%, saved.
 
 ## 🪵 Recent logs (deploy · handoff · git)
 Latest output, newest first — to help debug.
 
-### 📥 Deploy log
-- 3:18:41 pm ✓ ✓ Deployed — refreshing to the new build on the Dev page…
-- 3:18:41 pm ✗ · git: push failed
-- 3:18:41 pm ✓ · server.py: already current (newest is server(8).py)
-- 3:18:41 pm ✓ · archived mtasks-294.html
-- 3:18:41 pm ✓ · mtasks.html ← mtasks-294 (1).html (build 294)
-- 3:18:41 pm  Scanning the server’s Downloads for the newest build…
+### 🐙 GitHub log
+- 10:13:47 pm ✗ ✗ On branch tidy-folder-1557
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+	deleted:    archive/server/server_b208.py
+	deleted:    host.py
+	deleted:    mtasksjun2410pm.html
+	deleted:    nuke.sh
+	deleted:    server_b201.py
+	deleted:    server_b202.py
+	deleted:    server_b209.py
+	deleted:    server_b215.py
+	deleted:    server_b216.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Exort/
+	bookmarks-clean.html
+	dashboard-shortcuts.json
+	finish-tidy.sh
+	heal.sh
+	launcher.html
+	life-review.html
+	mtasks-csv/
+	mtasks-server.log
+	mtasks-to-csv.py
+	mtasks.code-workspace
+	restart-mtasks.sh
+	selftest.py
+	server_b208.py
+	server_b209maybe bad.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+- 10:13:47 pm  Pushing build 295…
